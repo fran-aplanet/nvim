@@ -55,7 +55,7 @@ end
 
 function set_background(content)
     vim.fn.system(
-        "gsettings set org.gnome.desktop.background picture-uri file:// \"'" .. content .. "'\"")
+        "gsettings set org.gnome.desktop.background picture-uri file://".. content)
 end
 
 local function select_background(prompt_bufnr, map)
