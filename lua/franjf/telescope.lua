@@ -55,7 +55,7 @@ end
 
 function set_background(content)
     vim.fn.system(
-        "settings set org.gnome.desktop.background picture-uri file:/// \"'" .. content .. "'\"")
+        "gsettings set org.gnome.desktop.background picture-uri file:// \"'" .. content .. "'\"")
 end
 
 local function select_background(prompt_bufnr, map)
@@ -94,7 +94,7 @@ local function image_selector(prompt, cwd)
     end
 end
 
-M.anime_selector = image_selector("< Awesome! backgrounds > ", "~/Background")
+M.anime_selector = image_selector("< Awesome! backgrounds > ", "~/Backgrounds")
 
 
 M.git_branches = function()
