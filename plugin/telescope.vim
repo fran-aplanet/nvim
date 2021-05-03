@@ -20,3 +20,4 @@ nnoremap <leader>sd :lua require('telescope.builtin').lsp_document_symbols()<CR>
 nnoremap <leader>sw :lua require('telescope.builtin').lsp_workspace_symbols()<CR>
 nnoremap <leader>d :lua require('telescope.builtin').lsp_definitions()<CR>
 nnoremap <leader>th :lua require('telescope.builtin').colorscheme()<CR>
+nnoremap <leader>va :lua require('franjf.telescope').anime_selector()<CR>
