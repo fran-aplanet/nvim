@@ -4,7 +4,7 @@ custom_theme.normal.c.bg = none
 require('lualine').setup{
 options = {
   theme = custom_theme,
-  section_separators = {'', ''},
+  section_separators = {'', ''},
   component_separators = {'', ''},
   icons_enabled = true,
 },
@@ -14,4 +14,12 @@ sections = {
   lualine_c = { {'filename', file_status = true} },
   lualine_x = { 'filetype' },
 },
+inactive_sections = {
+  lualine_a = {},
+  lualine_b = {},
+  lualine_c = {'filename'},
+  lualine_x = {'location'},
+  lualine_y = {},
+  lualine_z = {}
+}
 }

@@ -7,7 +7,7 @@ require('telescope').setup {
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
-        file_ignore_patterns = {".pyc", ".pdf", ".xml", ".xlsx", ".xls"},
+        file_ignore_patterns = {".pyc", ".pdf", ".xml", ".xlsx", ".xls", ".docx", ".zip", ".rar", ".jpg", ".png"},
 
         mappings = {
             i = {
