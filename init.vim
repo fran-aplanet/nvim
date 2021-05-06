@@ -30,4 +30,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
+" Testing
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()

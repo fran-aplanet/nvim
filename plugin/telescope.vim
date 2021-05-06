@@ -1,9 +1,11 @@
 lua require("franjf")
 
 "Files
-nnoremap <leader>f :lua require('telescope.builtin').git_files()<CR>
+" I've changed git files to af because I'm working on large repo with multiple
+" git submodules
+nnoremap <leader>af :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>b :lua require('telescope.builtin').buffers()<CR>
-nnoremap <Leader>af :lua require('telescope.builtin').find_files()<CR>
+nnoremap <Leader>f :lua require('telescope.builtin').find_files()<CR>
 nnoremap <leader>vrc :lua require('franjf.telescope').search_dotfiles()<CR>
 "Strings
 nnoremap <leader>grs :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
