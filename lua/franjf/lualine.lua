@@ -4,7 +4,7 @@ custom_theme.normal.c.bg = none
 require('lualine').setup{
 options = {
   theme = custom_theme,
-  section_separators = {'', ''},
+  section_separators = {'', ''},
   component_separators = {'', ''},
   icons_enabled = true,
 },
