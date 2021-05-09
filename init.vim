@@ -31,5 +31,5 @@ Plug 'joshdick/onedark.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Testing
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'ThePrimeagen/harpoon'
 call plug#end()
