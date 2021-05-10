@@ -22,3 +22,4 @@ set noswapfile
 set nobackup
 set autoread
 set scrolloff=8
+set termguicolors

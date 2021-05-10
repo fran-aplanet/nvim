@@ -8,5 +8,6 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-nnoremap <C-k> :cn<CR>zz
-nnoremap <C-j> :cp<CR>zz
+" NEED REMAP FOR THIS, NOW USING IN HARPOOOOON
+" nnoremap <C-k> :cn<CR>zz
+" nnoremap <C-j> :cp<CR>zz
