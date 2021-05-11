@@ -23,3 +23,4 @@ set nobackup
 set autoread
 set scrolloff=8
 set termguicolors
+set updatetime=50
