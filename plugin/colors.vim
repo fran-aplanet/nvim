@@ -25,7 +25,7 @@ fun! ColorMyPencils()
     hi Normal guibg=None
 endfun
 
-nnoremap <leader>ta :call ColorMyPencils()<CR>
+nnoremap <leader>at :call ColorMyPencils()<CR>
 nnoremap <leader>th :let g:franjf_colorscheme =
 
 call ColorMyPencils()

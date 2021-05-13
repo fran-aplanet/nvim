@@ -3,7 +3,6 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap rn :lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
 nnoremap <leader>n :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>

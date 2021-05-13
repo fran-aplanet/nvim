@@ -22,6 +22,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " TODO
 Plug 'vuciv/vim-bujo'
+" Format
+Plug 'sbdchd/neoformat'
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Theming
