@@ -23,3 +23,4 @@ nnoremap <leader>sw :lua require('telescope.builtin').lsp_workspace_symbols()<CR
 nnoremap <leader>d :lua require('telescope.builtin').lsp_definitions()<CR>
 nnoremap <leader>sr :lua require('telescope.builtin').lsp_references()<CR>
 nnoremap <leader>va :lua require('franjf.telescope').anime_selector()<CR>
+nnoremap <leader>vx :lua require('telescope.builtin').treesitter()<CR>
