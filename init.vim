@@ -34,4 +34,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
+" Testing
+Plug 'folke/todo-comments.nvim'
 call plug#end()
