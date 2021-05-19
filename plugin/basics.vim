@@ -15,6 +15,3 @@ vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 "Save with permissions (be really CAREFUL in which server do you use it)
 " nnoremap <leader> z <Esc>:w<CR>:silent !chmod -R 776 %<CR>
-let g:sneak#label = 1
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
