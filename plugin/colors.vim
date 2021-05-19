@@ -1,4 +1,4 @@
-let g:franjf_colorscheme = "onedark"
+let g:franjf_colorscheme = "gruvbox"
 fun! ColorMyPencils()
     let g:gruvbox_contrast_dark = 'hard'
     if exists('+termguicolors')

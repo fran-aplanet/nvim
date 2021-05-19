@@ -36,5 +36,5 @@ Plug 'joshdick/onedark.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Testing
-"Plug 'justinmk/vim-sneak'
-"call plug#end()
+Plug 'justinmk/vim-sneak'
+call plug#end()
