@@ -11,8 +11,9 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'tpope/vim-surround'
 " Snippets
 Plug 'honza/vim-snippets'
-" Commentary EASILY
+" Comments
 Plug 'tpope/vim-commentary'
+Plug 'folke/todo-comments.nvim'
 " File Navigation
 Plug 'ThePrimeagen/harpoon'
 " Telescope
@@ -35,5 +36,5 @@ Plug 'joshdick/onedark.vim'
 Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Testing
-Plug 'folke/todo-comments.nvim'
-call plug#end()
+"Plug 'justinmk/vim-sneak'
+"call plug#end()
