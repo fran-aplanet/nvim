@@ -1,5 +1,4 @@
-" Open Netwr and resize like a navigation tab
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>pv :Ex<CR>
 nnoremap <leader>+ :vertical resize +10<CR>
 nnoremap <leader>- :vertical resize -10<CR>
 

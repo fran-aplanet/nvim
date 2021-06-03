@@ -20,6 +20,7 @@ nnoremap <leader>gwa :lua require('telescope').extensions.git_worktree.create_gi
 "More stuff
 nnoremap <leader>d :lua require('telescope.builtin').lsp_definitions()<CR>
 nnoremap <leader>ts :lua require('telescope.builtin').lsp_document_symbols()<CR>
+nnoremap <leader>tw :lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>
 nnoremap <leader>tr :lua require('telescope.builtin').lsp_references()<CR>
 nnoremap <leader>va :lua require('franjf.telescope').anime_selector()<CR>
 nnoremap <leader>tt :TodoTelescope<CR>
