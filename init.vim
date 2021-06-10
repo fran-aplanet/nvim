@@ -32,7 +32,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'gruvbox-community/gruvbox'
 Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'rafamadriz/neon'
 " Testing
 Plug 'justinmk/vim-sneak'
 call plug#end()
