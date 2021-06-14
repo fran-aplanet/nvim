@@ -7,8 +7,8 @@ inoremap <C-c> <esc>
 " Edit Configuration File instantly
 nnoremap <Leader>v :e $MYVIMRC<cr>
 " Use <Tab> and <S-Tab> to navigate the completion list:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
