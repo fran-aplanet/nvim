@@ -1,4 +1,4 @@
-let g:franjf_colorscheme = "dracula"
+let g:franjf_colorscheme = "gruvbox"
 fun! ColorMyPencils()
     let g:gruvbox_contrast_dark = 'hard'
     if exists('+termguicolors')
@@ -12,7 +12,7 @@ fun! ColorMyPencils()
         call luaeval('vim.cmd("colorscheme " .. _A[1])', [g:franjf_colorscheme])
     else
         " TODO: What the way to use g:franjf_colorscheme
-        colorscheme dracula
+        colorscheme gruvbox
     endif
 
     hi ColorColumn ctermbg=0 guibg=grey

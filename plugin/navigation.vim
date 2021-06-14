@@ -14,3 +14,5 @@ nmap <leader>S <Plug>Sneak_S
 " NEED REMAP FOR THIS, NOW USING IN HARPOOOOON
 " nnoremap <C-k> :cn<CR>zz
 " nnoremap <C-j> :cp<CR>zz
+map <C-n> :cn<CR>
+map <C-m> :cp<CR>

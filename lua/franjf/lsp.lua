@@ -4,6 +4,13 @@ local lspconfig = require('lspconfig')
 -- Snippets support
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true;
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
 
 local function on_attach()
     -- TODO: TJ told me to do this and I should do it because he is Telescopic

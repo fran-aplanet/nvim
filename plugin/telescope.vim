@@ -6,6 +6,7 @@ lua require("franjf")
 nnoremap <leader>af :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>b :lua require('telescope.builtin').buffers()<CR>
 nnoremap <Leader>f :lua require('telescope.builtin').find_files()<CR>
+nnoremap <Leader>q :lua require('telescope.builtin').quickfix()<CR>
 nnoremap <leader>vrc :lua require('franjf.telescope').search_dotfiles()<CR>
 "Strings
 nnoremap <leader>tg :lua require('telescope.builtin').live_grep()<CR>
