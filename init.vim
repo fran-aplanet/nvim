@@ -36,4 +36,5 @@ Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Testing
 Plug 'justinmk/vim-sneak'
+Plug 'glepnir/dashboard-nvim'
 call plug#end()
