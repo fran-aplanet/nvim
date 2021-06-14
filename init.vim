@@ -10,7 +10,9 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 " Substitution of brackets, quotes, etc
 Plug 'tpope/vim-surround'
 " Snippets
-Plug 'norcalli/snippets.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
 " Comments
 Plug 'tpope/vim-commentary'
 Plug 'folke/todo-comments.nvim'

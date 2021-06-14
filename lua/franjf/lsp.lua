@@ -1,5 +1,3 @@
-require('snippets').use_suggested_mappings()
-
 local lspconfig = require('lspconfig')
 -- Snippets support
 local capabilities = vim.lsp.protocol.make_client_capabilities()
