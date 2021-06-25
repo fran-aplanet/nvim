@@ -19,7 +19,6 @@ nnoremap <leader>gb :lua require('franjf.telescope').git_branches()<CR>
 nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>gwa :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 "More stuff
-nnoremap <leader>d :lua require('telescope.builtin').lsp_definitions()<CR>
 nnoremap <leader>ts :lua require('telescope.builtin').lsp_document_symbols()<CR>
 nnoremap <leader>tw :lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>
 nnoremap <leader>tr :lua require('telescope.builtin').lsp_references()<CR>
