@@ -32,7 +32,6 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 " Themes
 Plug 'gruvbox-community/gruvbox'
-Plug 'pineapplegiant/spaceduck'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " Testing
 Plug 'justinmk/vim-sneak'
