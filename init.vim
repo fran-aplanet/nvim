@@ -33,6 +33,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Themes
 Plug 'gruvbox-community/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ful1e5/onedark.nvim'
 " Testing
 Plug 'justinmk/vim-sneak'
 Plug 'glepnir/dashboard-nvim'
