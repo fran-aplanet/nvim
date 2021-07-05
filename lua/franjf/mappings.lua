@@ -67,7 +67,7 @@ end
 function M.personal()
     local opts = { nowait = true, noremap = true  ,silent = false }
     local maps = {
-        {'n', '<leader>w', [[:w]]},
+        {'n', '<leader>w', [[:w<CR>]]},
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
         {'n', '<leader>X', [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]},
         {'n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<left><left>]]},
@@ -76,28 +76,37 @@ function M.personal()
 end
 
 function M.telescope()
-    local opts = { nowait = true, noremap = true, silent = false }
+    local opts = { nowait = false, noremap = true, silent = false }
+    local callbuiltin = function (name)
+        return string.format("<cmd>lua require'telescope.builtin'.%s()<cr>", name)
+    end
+    local callextension = function (name)
+        return string.format("<cmd>lua require'telescope'.extensions.%s()<cr>", name)
+    end
+    local callcustom = function (name)
+        return string.format("<cmd>lua require'franjf.telescope'.%s()<cr>", name)
+    end
+
     local maps = {
-        {'n', '<leader>af', [[require('telescope.builtin').git_files()<CR>]]},
-        {'n', '<leader>b', [[require('telescope.builtin').buffers()<CR>]]},
-        {'n', '<leader>f', [[require('telescope.builtin').find_files()<CR>]]},
-        {'n', '<leader>q', [[require('telescope.builtin').quickfix()<CR>]]},
-        {'n', '<leader>tg', [[require('telescope.builtin').live_grep()<CR>]]},
-        {'n', '<leader>grw', [[require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>]]},
-        {'n', '<leader>vh', [[require('telescope.builtin').help_tags()<CR>]]},
-        {'n', '<leader>vh', [[require('telescope.builtin').help_tags()<CR>]]},
+        {'n', '<leader>af',  callbuiltin("git_files()")},
+        {'n', '<leader>b',  callbuiltin("buffers()")},
+        {'n', '<leader>f',  callbuiltin("find_files()")},
+        {'n', '<leader>q',  callbuiltin("quickfix()")},
+        {'n', '<leader>tg',  callbuiltin("live_grep()")},
+        -- {'n', '<leader>grw',  callbuiltin("grep_string { search = vim.fn.expand("<cword>")")},
+        {'n', '<leader>vh',  callbuiltin("help_tags")},
 	-- LSP related -- 
-        {'n', '<leader>ts', [[require('telescope.builtin').lsp_document_symbols()<CR>]]},
-        {'n', '<leader>tw', [[require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>]]},
-        {'n', '<leader>tr', [[require('telescope.builtin').lsp_references()<CR>]]},
+        {'n', '<leader>ts',  callbuiltin("lsp_document_symbols()")},
+        {'n', '<leader>tw',  callbuiltin("lsp_dynamic_workspace_symbols()")},
+        {'n', '<leader>tr',  callbuiltin("lsp_references()")},
 	-- Plugins related -- 
+        {'n', '<leader>gw',  callextension("git_worktree.git_worktrees()")},
+        {'n', '<leader>gwa',  callextension("git_worktree.create_git_worktree()")},
         {'n', '<leader>tt', [[:TodoTelescope<CR>]]},
-        {'n', '<leader>gw', [[require('telescope').extensions.git_worktree.git_worktrees()<CR>]]},
-        {'n', '<leader>gwa', [[require('telescope').extensions.git_worktree.create_git_worktree()<CR>]]},
 	-- Custom -- 
-        {'n', '<leader>gb', [[require('franjf.telescope').git_branches()<CR>]]},
-        {'n', '<leader>vrc', [[require('franjf.telescope').search_dotfiles()<CR>]]},
-        {'n', '<leader>va', [[require('franjf.telescope').anime_selector()<CR>]]},
+        {'n', '<leader>gb',  callcustom("git_branches()")},
+        {'n', '<leader>vrc',  callcustom("search_dotfiles()")},
+        {'n', '<leader>va',  callcustom("anime_selector()")},
     }
     M.maps(maps, opts)
 end
@@ -126,7 +135,7 @@ end
 function M.lsp()
     local opts = { nowait = true, noremap = true, silent = true }
     local maps = {
-        {'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'},
+	{'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'},
         {'n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>'},
         {'n', '<leader>n', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'},
         {'n', '<leader>o', '<cmd>lua vim.lsp.buf.hover()<CR>'},
@@ -143,7 +152,7 @@ function M.git()
         {'n', '<leader>gs', [[:G]]},
         {'n', '<leader>gc', [[:Git add -A<bar>:Git commit<CR>]]},
         {'n', '<leader>gp', [[:Git push<CR>]]},
-        {'n', '<leader>gap', [[:Git submodule foreach --recursive git push <bar> :Git push<CR>]]},
+	{'n', '<leader>gap', [[:Git submodule foreach --recursive git push <bar> :Git push<CR>]]},
         {'n', '<leader>gop', [[:Git -c push.default=current push<CR>]]},
     }
     M.maps(maps, opts)
@@ -152,16 +161,16 @@ end
 function M.harpoon()
     local opts = { nowait = true, noremap = true, silent = false }
     local callfunc = function (name)
-        return string.format(":lua require'harpoon.ui'.%s()<cr>", name)
+        return string.format("<cmd>lua require'harpoon.ui'.%s()<cr>", name)
     end
 
     local maps = {
-        {'n', '<leader>a', [[:lua require'harpoon.mark'.add_file()<CR>]]},
-        {'n', '<C-e>', 'IAttach: ' .. '<esc>'.. callfunc("toggle_quick_menu()")},
-        {'n', '<C-h>', 'IAttach: ' .. '<esc>'.. callfunc("nav_file(1)")},
-        {'n', '<C-j>', 'IAttach: ' .. '<esc>'.. callfunc("nav_file(2)")},
-        {'n', '<C-k>', 'IAttach: ' .. '<esc>'.. callfunc("nav_file(3)")},
-        {'n', '<C-l>', 'IAttach: ' .. '<esc>'.. callfunc("nav_file(4)")},
+        {'n', '<leader>a', [[<cmd>lua require'harpoon.mark'.add_file()<CR>]]},
+        {'n', '<C-e>',  callfunc("toggle_quick_menu()")},
+        {'n', '<C-h>',  callfunc("nav_file(1)")},
+        {'n', '<C-j>',  callfunc("nav_file(2)")},
+        {'n', '<C-k>',  callfunc("nav_file(3)")},
+        {'n', '<C-l>',  callfunc("nav_file(4)")},
     }
     M.maps(maps, opts)
 end

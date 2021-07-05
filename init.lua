@@ -6,7 +6,7 @@ require "franjf.telescope"
 require "franjf.todo"
 require "franjf.lualine"
 require "franjf.mappings".mappings()
--- require "franjf.settings".settings()
+require "franjf.settings".settings()
 
 vim.api.nvim_command([[
     augroup ChangeBackgroudColour

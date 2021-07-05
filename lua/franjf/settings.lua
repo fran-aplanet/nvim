@@ -2,15 +2,15 @@ local M = {}
 local opt = vim.opt
 local g = vim.g
 
--- function M.settings()
---     M.options()
---     M.window_options()
---     M.colors()
--- end
+function M.settings()
+    M.options()
+    M.window_options()
+    M.colors()
+end
 
--- function M.options()
+function M.options()
 
-    -- opt.encoding       = 'utf-8'
+    opt.encoding       = 'utf-8'
     opt.hidden         = true
     opt.showmatch      = true
     opt.smartcase      = true
@@ -39,19 +39,19 @@ local g = vim.g
     opt.diffopt        = 'filler,internal,algorithm:histogram,indent-heuristic'
     opt.completeopt    = 'menuone,noinsert,noselect'
     -- opt.virtualedit    = 'block'
--- end
+end
 
--- function M.window_options()
+function M.window_options()
     -- opt.breakindent = true
     opt.linebreak = true
     opt.number = true
     opt.relativenumber = true
     opt.wrap = true
--- end
+end
 
 
--- function M.colors()
+function M.colors()
     g.colors_name    = "gruvbox"
--- end
+end
 
--- return M
+return M

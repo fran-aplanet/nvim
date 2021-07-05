@@ -4,7 +4,7 @@ local opt = vim.opt
 local g = vim.g
 
 -- opt.encoding       = 'utf-8'
-opt.hidden         = true
+-- opt.hidden         = true
 opt.showmatch      = true
 opt.smartcase      = true
 opt.termguicolors  = true
