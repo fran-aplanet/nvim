@@ -9,15 +9,14 @@ function M.settings()
 end
 
 function M.options()
-
     opt.encoding       = 'utf-8'
     opt.hidden         = true
     opt.showmatch      = true
     opt.smartcase      = true
     opt.termguicolors  = true
     opt.visualbell     = true
-    opt.noswapfile     = true
-    opt.nobackup       = true
+    opt.swapfile     = false
+    opt.backup       = false
     opt.autoread       = true
     opt.scrolloff      = 8
     opt.updatetime     = 50
@@ -31,7 +30,7 @@ function M.options()
     opt.tabstop        = 4
     opt.shiftwidth     = 4
     -- Search
-    opt.nohlsearch     = true
+    opt.hlsearch       = false
     opt.incsearch      = true
     -- New
     opt.splitright     = true

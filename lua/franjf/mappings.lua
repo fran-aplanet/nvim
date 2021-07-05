@@ -78,13 +78,13 @@ end
 function M.telescope()
     local opts = { nowait = false, noremap = true, silent = false }
     local callbuiltin = function (name)
-        return string.format("<cmd>lua require'telescope.builtin'.%s()<cr>", name)
+        return string.format(":lua require'telescope.builtin'.%s()<CR>", name)
     end
     local callextension = function (name)
-        return string.format("<cmd>lua require'telescope'.extensions.%s()<cr>", name)
+        return string.format("<cmd>lua require'telescope'.extensions.%s()<CR>", name)
     end
     local callcustom = function (name)
-        return string.format("<cmd>lua require'franjf.telescope'.%s()<cr>", name)
+        return string.format("<cmd>lua require'franjf.telescope'.%s()<CR>", name)
     end
 
     local maps = {
@@ -93,17 +93,16 @@ function M.telescope()
         {'n', '<leader>f',  callbuiltin("find_files()")},
         {'n', '<leader>q',  callbuiltin("quickfix()")},
         {'n', '<leader>tg',  callbuiltin("live_grep()")},
-        -- {'n', '<leader>grw',  callbuiltin("grep_string { search = vim.fn.expand("<cword>")")},
         {'n', '<leader>vh',  callbuiltin("help_tags")},
-	-- LSP related -- 
+        -- LSP related -- 
         {'n', '<leader>ts',  callbuiltin("lsp_document_symbols()")},
         {'n', '<leader>tw',  callbuiltin("lsp_dynamic_workspace_symbols()")},
         {'n', '<leader>tr',  callbuiltin("lsp_references()")},
-	-- Plugins related -- 
+        -- Plugins related -- 
         {'n', '<leader>gw',  callextension("git_worktree.git_worktrees()")},
         {'n', '<leader>gwa',  callextension("git_worktree.create_git_worktree()")},
         {'n', '<leader>tt', [[:TodoTelescope<CR>]]},
-	-- Custom -- 
+        -- Custom -- 
         {'n', '<leader>gb',  callcustom("git_branches()")},
         {'n', '<leader>vrc',  callcustom("search_dotfiles()")},
         {'n', '<leader>va',  callcustom("anime_selector()")},
@@ -126,8 +125,8 @@ end
 function M.neoformat()
     local opts = { nowait=true, silent = true, expr = true }
     local maps = {
-        {'n', '<leader>F', [[:Neoformat<CR>]]},
-        {'v', '<leader>F', [[:Neoformat<CR>]]},
+        {'n', '<leader>F', [[<cmd>Neoformat<CR>]]},
+        {'v', '<leader>F', [[<cmd>Neoformat<CR>]]},
     }
     M.maps(maps, opts)
 end
@@ -136,12 +135,12 @@ function M.lsp()
     local opts = { nowait = true, noremap = true, silent = true }
     local maps = {
 	{'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'},
-        {'n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>'},
-        {'n', '<leader>n', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'},
-        {'n', '<leader>o', '<cmd>lua vim.lsp.buf.hover()<CR>'},
-        -- {'n', 'vca', '<cmd>lua vim.lsp.buf.code_action()<CR>'},
-        -- {'n', 'vsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>'},
-        -- {'n', '<leader>vi', '<cmd>lua vim.lsp.buf.implementation()<CR>'},
+    {'n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>'},
+    {'n', '<leader>n', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'},
+    {'n', '<leader>o', '<cmd>lua vim.lsp.buf.hover()<CR>'},
+    -- {'n', 'vca', '<cmd>lua vim.lsp.buf.code_action()<CR>'},
+    -- {'n', 'vsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>'},
+    -- {'n', '<leader>vi', '<cmd>lua vim.lsp.buf.implementation()<CR>'},
     }
     M.bufmaps(maps, opts)
 end
@@ -161,7 +160,7 @@ end
 function M.harpoon()
     local opts = { nowait = true, noremap = true, silent = false }
     local callfunc = function (name)
-        return string.format("<cmd>lua require'harpoon.ui'.%s()<cr>", name)
+        return string.format("<cmd>lua require'harpoon.ui'.%s()<CR>", name)
     end
 
     local maps = {
