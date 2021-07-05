@@ -78,7 +78,7 @@ end
 function M.telescope()
     local opts = { nowait = false, noremap = true, silent = false }
     local callbuiltin = function (name)
-        return string.format(":lua require'telescope.builtin'.%s()<CR>", name)
+        return string.format("<cmd>lua require'telescope.builtin'.%s()<CR>", name)
     end
     local callextension = function (name)
         return string.format("<cmd>lua require'telescope'.extensions.%s()<CR>", name)
