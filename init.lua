@@ -1,11 +1,11 @@
 vim.g.mapleader = " "
 
 require "franjf.plugins"
-require "franjf.telescope"
 require "franjf.todo"
 require "franjf.lualine"
 require "franjf.lsp"
 require "franjf.treesitter"
+require "franjf.telescope"
 require "franjf.dashboard"
 require "franjf.icons"
 require "franjf.mappings".mappings()

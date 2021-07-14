@@ -31,7 +31,9 @@ require("telescope").setup {
         },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = {"%.pyc", "%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg"},
-        shorten_path = true,
+        path_display = {
+            'shorten',
+        },
         winblend = 0,
         border = {},
         borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
