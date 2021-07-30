@@ -9,7 +9,6 @@ require("todo-comments").setup {
         TODO = { icon = " ", color = "info", alt ={"TAREA", "TASK"} },
         TESTING = { icon = "ﭧ ", color = "testing", alt ={"TEST", "PRUEBA"} },
         HACK = { icon = " ", color = "warning" },
-        CONSTRUCTION = { icon = " ", color = "warning" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = " ", color = "perf", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },

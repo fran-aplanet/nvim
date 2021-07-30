@@ -51,7 +51,8 @@ end
 
 
 function M.colors()
-    g.colors_name    = "github-theme"
+    -- require('github-theme').setup({transparent=true})
+    g.colors_name    = "dracula"
 end
 
 return M
