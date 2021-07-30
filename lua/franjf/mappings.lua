@@ -154,10 +154,10 @@ function M.harpoon()
     local maps = {
         {'n', '<leader>a', [[<cmd>lua require'harpoon.mark'.add_file()<CR>]]},
         {'n', '<C-e>', [[<cmd>lua require'harpoon.ui'.toggle_quick_menu()<cr>]]},
-        {'n', '<C-h>', [[<cmd>lua require'harpoon.ui'.nav_files(1)<cr>]]},
-        {'n', '<C-j>', [[<cmd>lua require'harpoon.ui'.nav_files(2)<cr>]]},
-        {'n', '<C-k>', [[<cmd>lua require'harpoon.ui'.nav_files(3)<cr>]]},
-        {'n', '<C-l>', [[<cmd>lua require'harpoon.ui'.nav_files(4)<cr>]]},
+        {'n', '<C-h>', [[<cmd>lua require('harpoon.ui').nav_file(1)<cr>]]},
+        {'n', '<C-j>', [[<cmd>lua require'harpoon.ui'.nav_file(2)<cr>]]},
+        {'n', '<C-k>', [[<cmd>lua require'harpoon.ui'.nav_file(3)<cr>]]},
+        {'n', '<C-l>', [[<cmd>lua require'harpoon.ui'.nav_file(4)<cr>]]},
     }
     M.maps(maps, opts)
 end

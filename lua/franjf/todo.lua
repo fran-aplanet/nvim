@@ -3,14 +3,14 @@ require("todo-comments").setup {
         FIX = {
           icon = " ",
           color = "error", -- can be a hex color, or a named color (see below)
-          alt = { "FIXME", "BUG", "FIXIT", "FIX", "ISSUE", "ERROR" },
+          alt = { "FIXME", "BUG", "FIX", "ERROR" },
           -- signs = false, -- configure signs for some keywords individually
         },
         TODO = { icon = " ", color = "info", alt ={"TAREA", "TASK"} },
         TESTING = { icon = "ﭧ ", color = "testing", alt ={"TEST", "PRUEBA"} },
         HACK = { icon = " ", color = "warning" },
-        WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = " ", color = "perf", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+        WARN = { icon = " ", color = "warning", alt = { "WARNING", } },
+        PERF = { icon = " ", color = "perf", alt = { "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
   },
   colors = {
