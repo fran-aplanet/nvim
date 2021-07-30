@@ -7,6 +7,7 @@ require "franjf.lsp"
 require "franjf.treesitter"
 require "franjf.telescope"
 require "franjf.dashboard"
+require "franjf.compe"
 require "franjf.icons"
 require "franjf.mappings".mappings()
 require "franjf.settings".settings()

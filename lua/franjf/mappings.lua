@@ -71,6 +71,8 @@ function M.personal()
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
         {'n', '<leader>X', [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]},
         {'n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<left><left>]]},
+        {'v', 'J', [[:m '>+1<cr>gv=gv]]},
+        {'v', 'K', [[:m '<-2<cr>gv=gv]]},
     }
     M.maps(maps, opts)
 end
@@ -122,7 +124,7 @@ function M.neoformat()
 end
 
 function M.lsp()
-    local opts = { nowait = true, noremap = true, silent = true }
+    local opts = { nowait = false, noremap = true, silent = false }
     local maps = {
 	{'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>'},
     {'n', 'rn', '<cmd>lua vim.lsp.buf.rename()<CR>'},
@@ -132,17 +134,17 @@ function M.lsp()
     -- {'n', 'vsh', '<cmd>lua vim.lsp.buf.signature_help()<CR>'},
     -- {'n', '<leader>vi', '<cmd>lua vim.lsp.buf.implementation()<CR>'},
     }
-    M.bufmaps(maps, opts)
+    M.maps(maps, opts)
 end
 
 function M.git()
     local opts = { nowait = false, noremap = true, silent = false }
     local maps = {
-        {'n', '<leader>gs', [[:G]]},
-        {'n', '<leader>gc', [[:Git add -A<bar>:Git commit<CR>]]},
-        {'n', '<leader>gp', [[:Git push<CR>]]},
-        {'n', '<leader>gap', [[:Git submodule foreach --recursive git push <bar> :Git push<CR>]]},
-        {'n', '<leader>gop', [[:Git -c push.default=current push<CR>]]},
+        {'n', '<leader>gs', [[<cmd>G<cr>]]},
+        {'n', '<leader>gc', [[<cmd>Git add -A<bar>:Git commit<cr>]]},
+        {'n', '<leader>gp', [[<cmd>Git push<cr>]]},
+        {'n', '<leader>gap', [[<cmd>Git submodule foreach --recursive git push <bar> :Git push<cr>]]},
+        {'n', '<leader>gop', [[<cmd>Git -c push.default=current push<cr>]]},
     }
     M.maps(maps, opts)
 end

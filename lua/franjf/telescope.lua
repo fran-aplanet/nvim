@@ -17,17 +17,17 @@ require("telescope").setup {
         selection_strategy = "reset",
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
-	layout_config = {
-		prompt_position = "bottom",
-		width = 0.75,
-		preview_cutoff = 120,
-		horizontal = {
-			mirror = false,
-			preview_width = 0.5
-		},
-		vertical = {
-			mirror = false
-		}
+        layout_config = {
+            prompt_position = "bottom",
+            width = 0.75,
+            preview_cutoff = 120,
+            horizontal = {
+                mirror = false,
+                preview_width = 0.5
+            },
+            vertical = {
+                mirror = false
+            }
         },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = {"%.pyc", "%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg"},

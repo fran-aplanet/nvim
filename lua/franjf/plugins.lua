@@ -40,4 +40,11 @@ return require('packer').startup(function()
 	-- Testing
 	use 'justinmk/vim-sneak'
 	use 'glepnir/dashboard-nvim'
+    use 'projekt0n/github-nvim-theme'
+    use {
+      "folke/twilight.nvim",
+      config = function()
+        require("twilight").setup {}
+      end
+    }
 end)

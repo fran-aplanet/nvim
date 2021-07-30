@@ -15,8 +15,9 @@ function M.options()
     opt.smartcase      = true
     opt.termguicolors  = true
     opt.visualbell     = true
-    opt.swapfile     = false
-    opt.backup       = false
+    opt.swapfile       = false
+    opt.backup         = false
+    opt.signcolumn     = 'no'
     opt.autoread       = true
     opt.scrolloff      = 8
     opt.updatetime     = 50
@@ -50,7 +51,7 @@ end
 
 
 function M.colors()
-    g.colors_name    = "gruvbox"
+    g.colors_name    = "github-theme"
 end
 
 return M
