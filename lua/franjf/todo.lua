@@ -1,17 +1,12 @@
 require("todo-comments").setup {
     keywords = {
-        FIX = {
-          icon = " ",
-          color = "error", -- can be a hex color, or a named color (see below)
-          alt = { "FIXME", "BUG", "FIX", "ERROR" },
-          -- signs = false, -- configure signs for some keywords individually
-        },
-        TODO = { icon = " ", color = "info", alt ={"TAREA", "TASK"} },
+        NOTE = { icon = " ", color = "hint", alt = { "NOTA" } },
+        TODO = { icon = " ", color = "info", alt ={"PENDIENTE"} },
+        DONE = { icon = " ", color = "#50fa7b"},
+        FIX = {icon = " ", color = "error", alt = { "BUG", "FIX", "ERROR" } },
+        WARNING = { icon = " ", color = "warning", },
+        PERFORMANCE = { icon = " ", color = "perf"},
         TESTING = { icon = "ﭧ ", color = "testing", alt ={"TEST", "PRUEBA"} },
-        HACK = { icon = " ", color = "warning" },
-        WARN = { icon = " ", color = "warning", alt = { "WARNING", } },
-        PERF = { icon = " ", color = "perf", alt = { "PERFORMANCE", "OPTIMIZE" } },
-        NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
   },
   colors = {
     error = { "LspDiagnosticsDefaultError", "ErrorMsg", "#DC2626" },

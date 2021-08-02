@@ -167,6 +167,8 @@ end
 function M.from_the_primageagen()
     local opts = { nowait = false, noremap = false, silent = false }
     local maps = {
+        -- Behave Vim
+        {'n', 'Y', [[y$]]},
         -- Keeping it centered
         {'n', 'n', [[nzzzv]]},
         {'n', 'N', [[Nzzzv]]},
