@@ -11,6 +11,7 @@ function M.mappings()
     M.lsp()
     M.git()
     M.harpoon()
+    M.from_the_primageagen()
 end
 
 
@@ -55,8 +56,8 @@ function M.movements()
         {'n', '<leader>+', [[:vertical resize +10<CR>]]},
         {'n', '<leader>-', [[:vertical resize -10<CR>]]},
         {'n', '<leader>h', [[:wincmd h<CR>]]},
-        {'n', '<leader>j', [[:wincmd j<CR>]]},
-        {'n', '<leader>k', [[:wincmd k<CR>]]},
+        -- {'n', '<leader>j', [[:wincmd j<CR>]]},
+        -- {'n', '<leader>k', [[:wincmd k<CR>]]},
         {'n', '<leader>l', [[:wincmd l<CR>]]},
         {'', '<C-n>', [[:cn<CR>]]},
         {'', '<C-m>', [[:cp<CR>]]},
@@ -158,6 +159,33 @@ function M.harpoon()
         {'n', '<C-j>', [[<cmd>lua require'harpoon.ui'.nav_file(2)<cr>]]},
         {'n', '<C-k>', [[<cmd>lua require'harpoon.ui'.nav_file(3)<cr>]]},
         {'n', '<C-l>', [[<cmd>lua require'harpoon.ui'.nav_file(4)<cr>]]},
+    }
+    M.maps(maps, opts)
+end
+
+
+function M.from_the_primageagen()
+    local opts = { nowait = false, noremap = false, silent = false }
+    local maps = {
+        -- Keeping it centered
+        {'n', 'n', [[nzzzv]]},
+        {'n', 'N', [[Nzzzv]]},
+        {'n', 'J', [[mzJ`z]]},
+        -- Undo break points
+        {'i', ',', [[,<c-g>u]]},
+        {'i', '.', [[.<c-g>u]]},
+        {'i', '!', [[!<c-g>u]]},
+        {'i', '?', [[?<c-g>u]]},
+        -- Jumplists mutations
+        {'n', '<expr> k', [[(v:count > 5 ? "m'" . v:count : "") . 'k']]},
+        {'n', '<expr> j', [[(v:count > 5 ? "m'" . v:count : "") . 'j']]},
+        -- Moving text
+        {'v', 'J', [[:m '>+1<cr>gv=gv]]},
+        {'v', 'K', [[:m '<-2<cr>gv=gv]]},
+        {'i', '<C-k>', [[<esc>:m .-2<cr>==]]},
+        {'i', '<C-j>', [[<esc>:m .+1<cr>==]]},
+        {'n', '<leader>j', [[:m .+1<cr>==]]},
+        {'n', '<leader>k', [[:m .-2<cr>==]]},
     }
     M.maps(maps, opts)
 end
