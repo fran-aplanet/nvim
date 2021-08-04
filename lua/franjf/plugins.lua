@@ -35,12 +35,14 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-web-devicons'
 	-- Themes
 	use 'gruvbox-community/gruvbox'
+    use 'Murtaza-Udaipurwala/gruvqueen'
 	use {'dracula/vim', as = 'dracula' }
 	use 'ful1e5/onedark.nvim'
 	-- Testing
 	use 'justinmk/vim-sneak'
 	use 'glepnir/dashboard-nvim'
     use 'projekt0n/github-nvim-theme'
+    use {'kkoomen/vim-doge', run = ':call doge#install()'}
     use {
       "folke/twilight.nvim",
       config = function()

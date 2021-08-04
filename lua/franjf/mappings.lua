@@ -56,11 +56,9 @@ function M.movements()
         {'n', '<leader>+', [[:vertical resize +10<CR>]]},
         {'n', '<leader>-', [[:vertical resize -10<CR>]]},
         {'n', '<leader>h', [[:wincmd h<CR>]]},
-        -- {'n', '<leader>j', [[:wincmd j<CR>]]},
-        -- {'n', '<leader>k', [[:wincmd k<CR>]]},
         {'n', '<leader>l', [[:wincmd l<CR>]]},
-        {'', '<C-n>', [[:cn<CR>]]},
-        {'', '<C-m>', [[:cp<CR>]]},
+        {'n', '<C-j>', [[:cnext<cr>zz]]},
+        {'n', '<C-k>', [[:cprevious<cr>zz]]},
     }
     M.maps(maps, opts)
 end
@@ -72,8 +70,6 @@ function M.personal()
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
         {'n', '<leader>X', [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]},
         {'n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<left><left>]]},
-        {'v', 'J', [[:m '>+1<cr>gv=gv]]},
-        {'v', 'K', [[:m '<-2<cr>gv=gv]]},
     }
     M.maps(maps, opts)
 end
@@ -155,10 +151,10 @@ function M.harpoon()
     local maps = {
         {'n', '<leader>a', [[<cmd>lua require'harpoon.mark'.add_file()<CR>]]},
         {'n', '<C-e>', [[<cmd>lua require'harpoon.ui'.toggle_quick_menu()<cr>]]},
-        {'n', '<C-h>', [[<cmd>lua require('harpoon.ui').nav_file(1)<cr>]]},
-        {'n', '<C-j>', [[<cmd>lua require'harpoon.ui'.nav_file(2)<cr>]]},
-        {'n', '<C-k>', [[<cmd>lua require'harpoon.ui'.nav_file(3)<cr>]]},
-        {'n', '<C-l>', [[<cmd>lua require'harpoon.ui'.nav_file(4)<cr>]]},
+        {'n', '<leader>1', [[<cmd>lua require('harpoon.ui').nav_file(1)<cr>]]},
+        {'n', '<leader>2', [[<cmd>lua require'harpoon.ui'.nav_file(2)<cr>]]},
+        {'n', '<leader>3', [[<cmd>lua require'harpoon.ui'.nav_file(3)<cr>]]},
+        {'n', '<leader>4', [[<cmd>lua require'harpoon.ui'.nav_file(4)<cr>]]},
     }
     M.maps(maps, opts)
 end

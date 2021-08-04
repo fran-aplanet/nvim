@@ -97,6 +97,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
+  gruvqueen = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/gruvqueen"
+  },
   harpoon = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/harpoon"
@@ -161,6 +165,10 @@ _G.packer_plugins = {
   ["vim-commentary"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/vim-commentary"
+  },
+  ["vim-doge"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-doge"
   },
   ["vim-fugitive"] = {
     loaded = true,

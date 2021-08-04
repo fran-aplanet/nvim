@@ -52,7 +52,8 @@ end
 
 function M.colors()
     -- require('github-theme').setup({transparent=true})
-    g.colors_name    = "dracula"
+    g.colors_name    = "gruvqueen"
+    g.gruvqueen_style = "original"
 end
 
 return M
