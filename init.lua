@@ -24,4 +24,5 @@ vim.api.nvim_command([[
         autocmd colorscheme * :hi CursorLineNR guibg=none
     augroup END
 ]])
+--blablabala
 vim.o.termguicolors = true
