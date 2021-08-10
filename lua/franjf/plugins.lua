@@ -49,4 +49,5 @@ return require('packer').startup(function()
         require("twilight").setup {}
       end
     }
+    use 'dylanaraps/wal.vim'
 end)

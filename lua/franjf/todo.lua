@@ -1,4 +1,5 @@
 require("todo-comments").setup {
+    signs = true,
     keywords = {
         NOTE = { icon = " ", color = "hint", alt = { "NOTA" } },
         TODO = { icon = " ", color = "info", alt ={"PENDIENTE"} },

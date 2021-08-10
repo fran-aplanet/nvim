@@ -85,7 +85,7 @@ function M.telescope()
         {'n', '<leader>vh', [[<cmd>lua require('telescope.builtin').help_tags()<cr>]]},
         -- LSP related -- 
         {'n', '<leader>ts', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>]]},
-        {'n', '<leader>tw', [[<cmd>lua require('telescope.builtin').lsp_dyanmic_workspace_symbols()<cr>]]},
+        {'n', '<leader>tw', [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>]]},
         {'n', '<leader>tr', [[<cmd>lua require('telescope.builtin').lsp_references()<cr>]]},
         -- Plugins related -- 
         {'n', '<leader>gw', [[<cmd>lua require('telescope').git_worktrees()<cr>]]},

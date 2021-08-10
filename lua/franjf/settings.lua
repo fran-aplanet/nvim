@@ -6,6 +6,7 @@ function M.settings()
     M.options()
     M.window_options()
     M.colors()
+    M.doge_doc()
 end
 
 function M.options()
@@ -51,9 +52,13 @@ end
 
 
 function M.colors()
-    -- require('github-theme').setup({transparent=true})
-    g.colors_name    = "gruvqueen"
+    g.colors_name    = "gruvbox"
     g.gruvqueen_style = "original"
+end
+
+
+function M.doge_doc()
+    g.doge_doc_standard_python  = "google"
 end
 
 return M
