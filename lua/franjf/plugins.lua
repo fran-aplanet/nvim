@@ -43,11 +43,11 @@ return require('packer').startup(function()
 	use 'glepnir/dashboard-nvim'
     use 'projekt0n/github-nvim-theme'
     use {'kkoomen/vim-doge', run = ':call doge#install()'}
+    -- Folke paranoids
     use {
       "folke/twilight.nvim",
       config = function()
         require("twilight").setup {}
       end
     }
-    use 'dylanaraps/wal.vim'
 end)
