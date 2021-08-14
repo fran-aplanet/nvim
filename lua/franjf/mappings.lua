@@ -87,6 +87,10 @@ function M.telescope()
         {'n', '<leader>ts', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>]]},
         {'n', '<leader>tw', [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>]]},
         {'n', '<leader>tr', [[<cmd>lua require('telescope.builtin').lsp_references()<cr>]]},
+	{'n', '<leader>ti', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]]},
+	{'n', '<leader>ta', [[<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>]]},
+	{'n', '<leader>gt', [[<cmd>lua require('telescope.builtin').git_status()<cr>]]},
+		
         -- Plugins related -- 
         {'n', '<leader>gw', [[<cmd>lua require('telescope').git_worktrees()<cr>]]},
         {'n', '<leader>gwa', [[<cmd>lua require('telescope').git_worktree.create_git_worktree()<cr>]]},
@@ -95,6 +99,11 @@ function M.telescope()
         {'n', '<leader>gb', [[<cmd>lua require('franjf.telescope').git_branches()<cr>]]},
         {'n', '<leader>vrc', [[<cmd>lua require('franjf.telescope').search_dotfiles()<cr>]]},
         {'n', '<leader>va', [[<cmd>lua require('franjf.telescope').anime_selector()<cr>]]},
+	-- Testing --
+	{'n', '<leader>tm', [[<cmd>lua require('telescope.builtin').man_pages()<cr>]]},
+	{'n', '<leader>tc', [[<cmd>lua require('telescope.builtin').colorscheme()<cr>]]},
+	{'n', '<leader>th', [[<cmd>lua require('telescope.builtin').highlights()<cr>]]},
+		
     }
     M.maps(maps, opts)
 end
