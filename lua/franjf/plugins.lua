@@ -24,7 +24,10 @@ return require('packer').startup(function()
 	-- Telescope
 	use 'nvim-lua/popup.nvim'
 	use 'nvim-lua/plenary.nvim'
-	use {'nvim-telescope/telescope.nvim', requires = 'nvim-telescope/telescope.nvim'}
+	use {
+  	'nvim-telescope/telescope.nvim',
+  	requires = { {'nvim-lua/plenary.nvim'} }
+	}
 	use 'nvim-telescope/telescope-fzy-native.nvim'
 	-- Format
 	use 'sbdchd/neoformat'
