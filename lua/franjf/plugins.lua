@@ -44,12 +44,12 @@ return require('packer').startup(function()
 	-- Testing
 	use 'justinmk/vim-sneak'
 	use 'glepnir/dashboard-nvim'
-    	use {'kkoomen/vim-doge', run = ':call doge#install()'}
-    	-- Folke paranoids
-    	use {
-      	"folke/twilight.nvim",
-      	config = function()
-        require("twilight").setup {}
-      end
+    use {'kkoomen/vim-doge', run = ':call doge#install()'}
+    -- Folke paranoids
+    use {
+    "folke/twilight.nvim",
+    config = function()
+    require("twilight").setup {}
+    end
     }
 end)

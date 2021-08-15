@@ -52,7 +52,7 @@ end
 
 
 function M.colors()
-    g.colors_name    = "gruvbox"
+    g.colors_name    = "gruvqueen"
     g.gruvqueen_style = "original"
 end
 

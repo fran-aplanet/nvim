@@ -147,6 +147,7 @@ M.refactors = function()
             map("n", "<CR>", refactor)
             return true
         end
-})
-
+	})
+end
 return M
+
