@@ -40,6 +40,7 @@ function M.options()
     opt.diffopt        = 'filler,internal,algorithm:histogram,indent-heuristic'
     opt.completeopt    = 'menuone,noinsert,noselect'
     -- opt.virtualedit    = 'block'
+    -- Testing
 end
 
 function M.window_options()
@@ -55,7 +56,6 @@ function M.colors()
     g.colors_name    = "gruvqueen"
     g.gruvqueen_style = "original"
 end
-
 
 function M.doge_doc()
     g.doge_doc_standard_python  = "google"

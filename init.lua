@@ -7,7 +7,7 @@ require "franjf.lsp"
 require "franjf.treesitter"
 require "franjf.telescope"
 require "franjf.dashboard"
-require "franjf.compe"
+require "franjf.cmp"
 require "franjf.icons"
 require "franjf.mappings".mappings()
 require "franjf.settings".settings()
@@ -24,5 +24,7 @@ vim.api.nvim_command([[
         autocmd colorscheme * :hi CursorLineNR guibg=none
     augroup END
 ]])
---blablabala
+
+
+-- autocmd bufread * syntax match potionComment "\v#?.*$" highlight link potionComment Function
 vim.o.termguicolors = true

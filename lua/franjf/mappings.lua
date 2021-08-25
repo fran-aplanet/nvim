@@ -6,11 +6,11 @@ function M.mappings()
     M.movements()
     M.personal()
     M.telescope()
-    M.nvim_compe()
     M.neoformat()
     M.lsp()
     M.git()
     M.harpoon()
+    M.symbols_outline()
     M.from_the_primageagen()
 end
 
@@ -106,18 +106,6 @@ function M.telescope()
     M.maps(maps, opts)
 end
 
-
-
-function M.nvim_compe()
-    local opts = { silent = true, expr = true }
-    local maps = {
-        {'i', '<C-Space>', [[compe#complete()]]},
-        {'i', '<CR>', [[compe#confirm('<CR>')]]},
-        {'i', '<C-e>', [[compe#close('C-e'))]]},
-    }
-    M.maps(maps, opts)
-end
-
 function M.neoformat()
     local opts = { nowait = false, silent = false }
     local maps = {
@@ -166,6 +154,13 @@ function M.harpoon()
     M.maps(maps, opts)
 end
 
+function M.symbols_outline()
+    local opts = { nowait = true, noremap = true, silent = false }
+    local maps = {
+        {'n', '<leader>s', [[<cmd>SymbolsOutline<cr>]]},
+    }
+    M.maps(maps, opts)
+end
 
 function M.from_the_primageagen()
     local opts = { nowait = false, noremap = false, silent = false }

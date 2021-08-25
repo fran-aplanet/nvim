@@ -89,10 +89,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/git-worktree.nvim"
   },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/github-nvim-theme"
-  },
   gruvbox = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/gruvbox"
@@ -145,6 +141,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
@@ -157,11 +157,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
-  ["twilight.nvim"] = {
-    config = { "\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0" },
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/twilight.nvim"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/vim-commentary"
@@ -173,10 +168,6 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-sneak"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-sneak"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -193,10 +184,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: twilight.nvim
-time([[Config for twilight.nvim]], true)
-try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rtwilight\frequire\0", "config", "twilight.nvim")
-time([[Config for twilight.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

@@ -30,7 +30,7 @@ require("telescope").setup {
             }
         },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
-        file_ignore_patterns = {"%.pyc", "%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg"},
+        file_ignore_patterns = {"%.pyc", "%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp"},
         path_display = {
             'smart',
         },

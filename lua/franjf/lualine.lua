@@ -1,7 +1,6 @@
-local custom_theme = require('lualine.themes.dracula')
+-- local custom_theme = require('lualine.themes.dracula')
 -- local custom_theme = require('lualine.themes.horizon')
--- local custom_theme = require('lualine.themes.horizon')
--- local custom_theme = require('lualine.themes.horizon')
+local custom_theme = require('lualine.themes.gruvbox')
 custom_theme.normal.c.bg = none
 custom_theme.insert.c.bg = none
 custom_theme.visual.c.bg = none
