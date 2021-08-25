@@ -12,19 +12,30 @@ require "franjf.icons"
 require "franjf.mappings".mappings()
 require "franjf.settings".settings()
 
-vim.api.nvim_command([[
-    augroup ChangeBackgroudColour
-        autocmd colorscheme * :hi Normal guibg=none
-        autocmd colorscheme * :hi ColorColumn ctermbg=0 guibg=none
-        autocmd colorscheme * :hi LineNr guifg=#5eacd3
-        autocmd colorscheme * :hi netrwDir guifg=#5eacd3
-        autocmd colorscheme * :hi qfFileName guifg=#aed75f
-        autocmd colorscheme * :hi TelescopeBorder guifg=#5eacd
-        autocmd colorscheme * :hi SignColumn guibg=none
-        autocmd colorscheme * :hi CursorLineNR guibg=none
+vim.cmd([[
+    augroup ColorsComments
+        autocmd!
+        autocmd Syntax * syntax keyword AsteriskMarker * containedin=.*Comment,vimCommentTitle,cCommentL
+        autocmd ColorScheme * hi AsteriskMarker guibg=Green
     augroup END
 ]])
 
+vim.cmd([[
+    augroup ChangeBackgroudColour
+        autocmd!
+        autocmd ColorScheme * hi Normal guibg=none
+        autocmd ColorScheme * hi ColorColumn ctermbg=0 guibg=none
+        autocmd ColorScheme * hi LineNr guifg=#5eacd3
+        autocmd ColorScheme * hi netrwDir guifg=#5eacd3
+        autocmd ColorScheme * hi qfFileName guifg=#aed75f
+        autocmd ColorScheme * hi TelescopeBorder guifg=#5eacd
+        autocmd ColorScheme * hi SignColumn guibg=none
+        autocmd ColorScheme * hi CursorLineNR guibg=none
+    augroup END
+]])
 
--- autocmd bufread * syntax match potionComment "\v#?.*$" highlight link potionComment Function
+--********* que pasa aqui
+-- * que pasa aqui
+
+
 vim.o.termguicolors = true
