@@ -16,9 +16,17 @@ vim.cmd([[
     augroup ColorsComments
         autocmd!
         autocmd Syntax * syntax keyword AsteriskMarker * containedin=.*Comment,vimCommentTitle,cCommentL
+        autocmd Syntax * syntax match AsteriskMatch "\(\*\)" containedin=.*Comment,vimCommentTitle,cCommentL
+        autocmd Syntax * syntax keyword HelloMarker HELLO containedin=.*Comment,vimCommentTitle,cCommentL
         autocmd ColorScheme * hi AsteriskMarker guibg=Green
+        autocmd ColorScheme * hi AsteriskMatch guibg=Green
+        autocmd ColorScheme * hi HelloMarker guibg=Green
     augroup END
 ]])
+-- * que pasa aqui
+--HELLO que pasa aqui
+-- HELLO que pasa aqui
+-- * que pasa aqui
 
 vim.cmd([[
     augroup ChangeBackgroudColour
@@ -33,9 +41,5 @@ vim.cmd([[
         autocmd ColorScheme * hi CursorLineNR guibg=none
     augroup END
 ]])
-
---********* que pasa aqui
--- * que pasa aqui
-
 
 vim.o.termguicolors = true
