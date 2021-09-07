@@ -69,49 +69,49 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/LuaSnip"
+  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  ["dashboard-nvim"] = {
+  ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+    path = "/root/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lua"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
   },
   dracula = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/dracula"
   },
-  ["friendly-snippets"] = {
+  ["galaxyline.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/friendly-snippets"
-  },
-  ["git-worktree.nvim"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/git-worktree.nvim"
+    path = "/root/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   gruvbox = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/gruvbox"
   },
-  gruvqueen = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/gruvqueen"
-  },
   harpoon = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/harpoon"
-  },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   neoformat = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/neoformat"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -140,6 +140,11 @@ _G.packer_plugins = {
   ["popup.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["project.nvim"] = {
+    config = { "\27LJ\2\2>\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0" },
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/project.nvim"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
@@ -172,18 +177,14 @@ _G.packer_plugins = {
   ["vim-surround"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/vim-surround"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+try_loadstring("\27LJ\2\2>\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\17project_nvim\frequire\0", "config", "project.nvim")
+time([[Config for project.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

@@ -45,6 +45,7 @@ function M.core()
         {'n', '<SPACE>', [[<Nop>]]},
         {'i', 'ñ', [[<Esc>]]},
         {'i', '<C-c>', [[<Esc>]]},
+        {'n', '<C-c>', [[:wq<cr>]]},
     }
     M.maps(maps, opts)
 end
@@ -64,7 +65,7 @@ function M.movements()
 end
 
 function M.personal()
-    local opts = { nowait = true, noremap = true  ,silent = false }
+    local opts = { nowait = true, noremap = true  ,silent = true }
     local maps = {
         {'n', '<leader>w', [[:w<CR>]]},
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
@@ -75,6 +76,7 @@ function M.personal()
 end
 
 function M.telescope()
+
     local opts = { nowait = false, noremap = true, silent = false }
     local maps = {
         {'n', '<leader>af', [[<cmd>lua require('telescope.builtin').git_files()<cr>]]},
@@ -89,17 +91,16 @@ function M.telescope()
         {'n', '<leader>tr', [[<cmd>lua require('telescope.builtin').lsp_references()<cr>]]},
 		
         -- Plugins related -- 
-        -- {'n', '<leader>gw', [[<cmd>lua require('telescope').git_worktrees()<cr>]]},
-        -- {'n', '<leader>gwa', [[<cmd>lua require('telescope').git_worktree.create_git_worktree()<cr>]]},
         {'n', '<leader>tt', [[<cmd>TodoTelescope<cr>]]},
+        {'n', '<leader>tp', [[<cmd>Telescope projects<cr>]]},
         -- Custom -- 
         {'n', '<leader>gb', [[<cmd>lua require('franjf.telescope').git_branches()<cr>]]},
         {'n', '<leader>vrc', [[<cmd>lua require('franjf.telescope').search_dotfiles()<cr>]]},
         {'n', '<leader>va', [[<cmd>lua require('franjf.telescope').anime_selector()<cr>]]},
         -- Testing --
         {'n', '<leader>tm', [[<cmd>lua require('telescope.builtin').man_pages()<cr>]]},
-        {'n', '<leader>tc', [[<cmd>lua require('telescope.builtin').colorscheme()<cr>]]},
         {'n', '<leader>ti', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]]},
+        {'n', '<leader>tc', [[<cmd>lua require('telescope.builtin').colorscheme()<cr>]]},
         {'n', '<leader>ta', [[<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>]]},
 		
     }
@@ -134,8 +135,10 @@ function M.git()
     local maps = {
         {'n', '<leader>gs', [[<cmd>G<cr>]]},
         {'n', '<leader>gc', [[<cmd>Git add -A<bar>:Git commit<cr>]]},
-        {'n', '<leader>gp', [[<cmd>Git push<cr>]]},
-        {'n', '<leader>gap', [[<cmd>Git submodule foreach --recursive git push <bar> :Git push<cr>]]},
+        {'n', '<leader>gps', [[<cmd>Git push<cr>]]},
+        {'n', '<leader>gpl', [[<cmd>Git pull<cr>]]},
+        {'n', '<leader>gaps', [[<cmd>Git submodule foreach --recursive git push<bar>:Git push<cr>]]},
+        {'n', '<leader>gapl', [[<cmd>:Git pull <bar> :Git submodule foreach --recursive git pull<cr>]]},
         {'n', '<leader>gop', [[<cmd>Git -c push.default=current push<cr>]]},
     }
     M.maps(maps, opts)
@@ -186,6 +189,9 @@ function M.from_the_primageagen()
         {'i', '<C-j>', [[<esc>:m .+1<cr>==]]},
         {'n', '<leader>j', [[:m .+1<cr>==]]},
         {'n', '<leader>k', [[:m .-2<cr>==]]},
+        -- Copy to clipboard
+        {'n', '<leader>y', [["+y]]},
+        {'v', '<leader>y', [["+y]]},
     }
     M.maps(maps, opts)
 end

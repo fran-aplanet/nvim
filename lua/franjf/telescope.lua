@@ -10,9 +10,12 @@ require("telescope").setup {
             "--column",
             "--smart-case"
         },
-        prompt_prefix = " ",
-        selection_caret = " ",
+        prompt_prefix = "   ",
+        selection_caret = "  ",
         entry_prefix = "  ",
+        -- prompt_prefix = " ",
+        -- selection_caret = " ",
+        -- entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
         sorting_strategy = "descending",
@@ -63,7 +66,8 @@ require("telescope").setup {
 }
 
 require('telescope').load_extension('fzy_native')
-require("telescope").load_extension("git_worktree")
+-- require("telescope").load_extension("git_worktree")
+require('telescope').load_extension('projects')
 
 local M = {}
 M.search_dotfiles = function()

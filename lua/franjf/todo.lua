@@ -8,6 +8,7 @@ require("todo-comments").setup {
         WARNING = { icon = " ", color = "warning", },
         PERFORMANCE = { icon = " ", color = "perf"},
         TESTING = { icon = "ﭧ ", color = "testing", alt ={"TEST", "PRUEBA"} },
+        TODOMORE = { icon = " ", color = "hint"},
   },
   colors = {
     error = { "LspDiagnosticsDefaultError", "ErrorMsg", "#DC2626" },
