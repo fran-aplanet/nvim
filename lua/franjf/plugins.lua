@@ -2,17 +2,25 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
+
+    use 'mhartington/formatter.nvim'
 	-- Auto close
-    use 'jiangmiao/auto-pairs'
-	-- Autocompletion 
+    -- use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs'
+	-- LSP
     use 'neovim/nvim-lspconfig'
 	-- Snippets
-    use 'L3MON4D3/LuaSnip'
     -- Autocompletion
-	use 'hrsh7th/nvim-cmp'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'hrsh7th/cmp-nvim-lua'
-    use 'hrsh7th/cmp-nvim-lsp'
+    use { 'hrsh7th/nvim-cmp',
+    requires = {
+      'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'saadparwaiz1/cmp_luasnip',
+      },
+    }
+    use "rafamadriz/friendly-snippets"
 	-- Git
 	use 'tpope/vim-fugitive'
 	-- Substitution of brackets, quotes, etc
@@ -32,12 +40,9 @@ return require('packer').startup(function()
   	requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use 'nvim-telescope/telescope-fzy-native.nvim'
-	-- Format
-	use 'sbdchd/neoformat'
 	-- Syntax
 	use 'nvim-treesitter/nvim-treesitter'
 	-- Theming
-	-- use 'hoob3rt/lualine.nvim'
     use 'glepnir/galaxyline.nvim'
 	use 'kyazdani42/nvim-web-devicons'
 	-- Themes
@@ -51,7 +56,13 @@ return require('packer').startup(function()
             }
       end
     }
-
+    use {
+      'phaazon/hop.nvim',
+      as = 'hop',
+      config = function()
+        require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      end
+    }
     -- Bookmark zone
         -- use 'vuciv/vim-bujo'
         -- use 'Murtaza-Udaipurwala/gruvqueen'
@@ -62,5 +73,23 @@ return require('packer').startup(function()
         -- use 'hrsh7th/cmp-buffer'
         -- use 'hrsh7th/nvim-compe'
         -- use 'ThePrimeagen/git-worktree.nvim'
+        -- use {'pwntester/octo.nvim', config=function()
+        --     require("octo").setup({
+        --         mappings = {
+        --             issue = {
+        --               close_issue = "<space>c",           -- close issue
+        --               list_issues = "<space>l",           -- list open issues on same repo
+        --               add_assignee = "<space>aa",          -- add assignee
+        --               remove_assignee = "<space>ra",       -- remove assignee
+        --               create_label = "<space>cl",          -- create label
+        --               add_label = "<space>al",             -- add label
+        --               remove_label = "<space>rl",          -- remove label
+        --               goto_issue = "<space>g",            -- navigate to a local repo issue
+        --               add_comment = "<space>ac",           -- add comment
+        --               delete_comment = "<space>dc",        -- delete comment
+        --             },
+        --         }
+        --     })
+            -- end}
 
 end)

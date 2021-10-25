@@ -3,19 +3,27 @@ local lspconfig = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- capabilities.textDocument.completion.completionItem.snippetSupport = true;
--- capabilities.textDocument.completion.completionItem.resolveSupport = {
---   properties = {
---     'documentation',
---     'detail',
---     'additionalTextEdits',
---   }
--- }
-
 local function on_attach()
-    -- TODO: TJ told me to do this and I should do it because he is Telescopic
+    -- TJ told me to do this and I should do it because he is Telescopic
     -- "Big Tech" "Cash Money" Johnson
 end
+
+
+
+-- New
+require "lspconfig".efm.setup {
+    init_options = {documentFormatting = true},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {
+                {formatCommand = "lua-format -i", formatStdin = true}
+            }
+        }
+    }
+}
+
+
 
 require'lspconfig'.pyright.setup{ 
     capabilities = capabilities;

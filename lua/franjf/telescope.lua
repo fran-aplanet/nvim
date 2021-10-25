@@ -17,9 +17,9 @@ require("telescope").setup {
         -- selection_caret = " ",
         -- entry_prefix = "  ",
         initial_mode = "insert",
-        selection_strategy = "reset",
-        sorting_strategy = "descending",
-        layout_strategy = "horizontal",
+        -- selection_strategy = "reset",
+        -- sorting_strategy = "descending",
+        -- layout_strategy = "horizontal",
         layout_config = {
             prompt_position = "bottom",
             width = 0.75,
@@ -32,11 +32,11 @@ require("telescope").setup {
                 mirror = false
             }
         },
-        file_sorter = require('telescope.sorters').get_fzy_sorter,
+        -- file_sorter = require('telescope.sorters').get_fzy_sorter,
         file_ignore_patterns = {"%.pyc", "%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp"},
-        path_display = {
-            'smart',
-        },
+        -- path_display = {
+        --     'shorten',
+        -- },
         winblend = 0,
         border = {},
         borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
@@ -62,6 +62,11 @@ require("telescope").setup {
             override_generic_sorter = false,
             override_file_sorter = true,
         }
+   },
+   pickers = {
+       live_grep = {
+           only_sort_text = true
+       }
    }
 }
 

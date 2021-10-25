@@ -13,7 +13,7 @@ require("todo-comments").setup {
   colors = {
     error = { "LspDiagnosticsDefaultError", "ErrorMsg", "#DC2626" },
     warning = { "LspDiagnosticsDefaultWarning", "WarningMsg", "#FBBF24" },
-    info = { "#2563EB" },
+    info = { "#458588" },
     testing  = { "#8f3f71" },
     perf = { "#b16286" },
     hint = { "LspDiagnosticsDefaultHint", "#10B981" },

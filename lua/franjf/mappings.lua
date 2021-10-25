@@ -6,11 +6,12 @@ function M.mappings()
     M.movements()
     M.personal()
     M.telescope()
-    M.neoformat()
     M.lsp()
     M.git()
     M.harpoon()
+    M.hop()
     M.symbols_outline()
+    M.octo()
     M.from_the_primageagen()
 end
 
@@ -43,7 +44,9 @@ function M.core()
     local maps = {
         {'n', '<leader>v', [[:e $MYVIMRC<CR>]]},
         {'n', '<SPACE>', [[<Nop>]]},
-        {'i', 'ñ', [[<Esc>]]},
+        -- {'i', 'ñ', [[<Esc>]]},
+        {'i', 'jk', [[<Esc>]]},
+        {'i', 'kj', [[<Esc>]]},
         {'i', '<C-c>', [[<Esc>]]},
         {'n', '<C-c>', [[:wq<cr>]]},
     }
@@ -60,6 +63,11 @@ function M.movements()
         {'n', '<leader>l', [[:wincmd l<CR>]]},
         {'n', '<C-j>', [[:cnext<cr>zz]]},
         {'n', '<C-k>', [[:cprevious<cr>zz]]},
+        {'n', '<Tab>', [[<C-w>w]]},
+        -- Testing
+        {'n', 'm', [[<C-d>]]},
+        {'n', ',', [[<C-u>]]},
+        {'n', 'M', [[m]]},
     }
     M.maps(maps, opts)
 end
@@ -71,6 +79,7 @@ function M.personal()
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
         {'n', '<leader>X', [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]},
         {'n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<left><left>]]},
+        {'n', '<leader>F', '<cmd>:Format<CR>'},
     }
     M.maps(maps, opts)
 end
@@ -100,18 +109,10 @@ function M.telescope()
         -- Testing --
         {'n', '<leader>tm', [[<cmd>lua require('telescope.builtin').man_pages()<cr>]]},
         {'n', '<leader>ti', [[<cmd>lua require('telescope.builtin').lsp_implementations()<cr>]]},
-        {'n', '<leader>tc', [[<cmd>lua require('telescope.builtin').colorscheme()<cr>]]},
+        {'n', '<leader>th', [[<cmd>lua require('telescope.builtin').colorscheme()<cr>]]},
         {'n', '<leader>ta', [[<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>]]},
+        {'n', '<leader>tk', [[<cmd>lua require('telescope.builtin').keymaps()<cr>]]},
 		
-    }
-    M.maps(maps, opts)
-end
-
-function M.neoformat()
-    local opts = { nowait = false, silent = false }
-    local maps = {
-        {'n', '<leader>F', [[:Neoformat<CR>]]},
-        {'v', '<leader>F', [[<cmd>Neoformat<CR>]]},
     }
     M.maps(maps, opts)
 end
@@ -157,10 +158,28 @@ function M.harpoon()
     M.maps(maps, opts)
 end
 
+function M.hop()
+    local opts = { nowait = true, noremap = true, silent = false }
+    local maps = {
+        {'n', '<leader>s', [[<cmd>lua require'hop'.hint_char2()<cr>]]},
+        -- {'n', '<leader>sw', [[<cmd>lua require'hop'.hint_patterns()<cr>]]},
+    }
+    M.maps(maps, opts)
+end
+
 function M.symbols_outline()
     local opts = { nowait = true, noremap = true, silent = false }
     local maps = {
-        {'n', '<leader>s', [[<cmd>SymbolsOutline<cr>]]},
+        {'n', '<leader>so', [[<cmd>SymbolsOutline<cr>]]},
+    }
+    M.maps(maps, opts)
+end
+
+function M.octo()
+    local opts = { nowait = true, noremap = true, silent = false }
+    local maps = {
+        {'n', '<leader>il', [[<cmd>Octo issue list<cr>]]},
+        {'n', '<leader>ic', [[<cmd>Octo issue create<cr>]]},
     }
     M.maps(maps, opts)
 end
