@@ -6,7 +6,6 @@ function M.settings()
     M.options()
     M.window_options()
     M.globals()
-    M.colors()
     M.doge_doc()
 end
 
@@ -24,6 +23,7 @@ function M.options()
     opt.scrolloff      = 8
     opt.updatetime     = 50
     opt.showbreak      = '↳'
+    opt.cursorline     =  true
     opt.path:append    {"**"}
     -- Tab
     opt.expandtab      = true
@@ -35,14 +35,10 @@ function M.options()
     -- Search
     opt.hlsearch       = false
     opt.incsearch      = true
-    -- New
     opt.splitright     = true
     opt.wildmode       = "full"
     opt.diffopt        = 'filler,internal,algorithm:histogram,indent-heuristic'
     opt.completeopt    = 'menuone,noinsert,noselect'
-    -- opt.netrw_banner   = 0
-    -- opt.virtualedit    = 'block'
-    -- Testing
 end
 
 function M.window_options()
@@ -57,14 +53,8 @@ function M.globals()
     g.netrw_banner  = 0
 end
 
-function M.colors()
-    g.colors_name    = "gruvbox"
-    -- g.gruvqueen_style = "original"
-end
-
 function M.doge_doc()
     g.doge_doc_standard_python  = "google"
 end
-
 
 return M

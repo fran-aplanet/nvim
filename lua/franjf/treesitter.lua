@@ -8,7 +8,7 @@ require'nvim-treesitter.configs'.setup {
       'javascript',
     },
     highlight = {
-      enable = false
+      enable = true
     }
 
 }

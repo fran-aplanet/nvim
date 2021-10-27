@@ -206,8 +206,8 @@ function M.from_the_primageagen()
         {'v', 'K', [[:m '<-2<cr>gv=gv]]},
         {'i', '<C-k>', [[<esc>:m .-2<cr>==]]},
         {'i', '<C-j>', [[<esc>:m .+1<cr>==]]},
-        {'n', '<leader>j', [[:m .+1<cr>==]]},
-        {'n', '<leader>k', [[:m .-2<cr>==]]},
+        -- {'n', '<leader>j', [[:m .+1<cr>==]]},
+        -- {'n', '<leader>k', [[:m .-2<cr>==]]},
         -- Copy to clipboard
         {'n', '<leader>y', [["+y]]},
         {'v', '<leader>y', [["+y]]},

@@ -41,7 +41,10 @@ return require('packer').startup(function()
 	}
 	use 'nvim-telescope/telescope-fzy-native.nvim'
 	-- Syntax
-	use 'nvim-treesitter/nvim-treesitter'
+     use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 	-- Theming
     use 'glepnir/galaxyline.nvim'
 	use 'kyazdani42/nvim-web-devicons'
@@ -63,16 +66,8 @@ return require('packer').startup(function()
         require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
       end
     }
+    use 'tjdevries/colorbuddy.nvim'
     -- Bookmark zone
-        -- use 'vuciv/vim-bujo'
-        -- use 'Murtaza-Udaipurwala/gruvqueen'
-        -- use 'glepnir/dashboard-nvim'
-        -- use 'hrsh7th/vim-vsnip'
-        -- use 'hrsh7th/vim-vsnip-integ'
-        -- use 'rafamadriz/friendly-snippets'
-        -- use 'hrsh7th/cmp-buffer'
-        -- use 'hrsh7th/nvim-compe'
-        -- use 'ThePrimeagen/git-worktree.nvim'
         -- use {'pwntester/octo.nvim', config=function()
         --     require("octo").setup({
         --         mappings = {

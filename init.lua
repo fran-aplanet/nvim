@@ -22,9 +22,11 @@ vim.cmd([[
         autocmd ColorScheme * hi TelescopeBorder guifg=#5eacd
         autocmd ColorScheme * hi SignColumn guibg=none
         autocmd ColorScheme * hi LineNr guifg=#5eacd3
-        autocmd ColorScheme * hi CursorLineNR guibg=none guifg=#b94c07
+        autocmd ColorScheme * hi clear CursorLine
+        autocmd ColorScheme * hi CursorLineNR cterm=bold ctermbg=0 guifg=#fb4934 guibg=none
     augroup END
 ]])
+vim.cmd("colorscheme gruvbox")
 
 -- vim.cmd([[
 --     augroup ColorsComments
