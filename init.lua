@@ -6,7 +6,6 @@ require "franjf.statusline"
 require "franjf.telescope"
 require "franjf.cmp"
 require "franjf.lsp"
--- require "franjf.formatting"
 require "franjf.treesitter"
 require "franjf.icons"
 require "franjf.mappings".mappings()
@@ -21,13 +20,13 @@ vim.cmd([[
         autocmd ColorScheme * hi qfFileName guifg=#aed75f
         autocmd ColorScheme * hi TelescopeBorder guifg=#5eacd
         autocmd ColorScheme * hi SignColumn guibg=none
-        autocmd ColorScheme * hi LineNr guifg=#5eacd3
         autocmd ColorScheme * hi clear CursorLine
         autocmd ColorScheme * hi CursorLineNR cterm=bold ctermbg=0 guifg=#fb4934 guibg=none
     augroup END
 ]])
 vim.cmd("colorscheme gruvbox")
 
+-- autocmd ColorScheme * hi LineNr guifg=#5eacd3
 -- vim.cmd([[
 --     augroup ColorsComments
 --         autocmd!

@@ -12,7 +12,6 @@ function M.mappings()
     M.hop()
     M.symbols_outline()
     M.octo()
-    M.from_the_primageagen()
 end
 
 
@@ -72,12 +71,36 @@ end
 function M.personal()
     local opts = { nowait = true, noremap = true  ,silent = true }
     local maps = {
-        -- {'n', '<leader>w', [[:w<CR>]]},
         {'n', '<leader><leader>', [[:w<CR>]]},
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
         {'n', '<leader>X', [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]},
         {'n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<left><left>]]},
         {'n', '<leader>F', '<cmd>:Format<CR>'},
+        -- Behave Vim
+        {'n', 'Y', [[y$]]},
+        -- Keeping it centered
+        {'n', 'n', [[nzzzv]]},
+        {'n', 'N', [[Nzzzv]]},
+        {'n', 'J', [[mzJ`z]]},
+        -- Undo break points
+        {'i', ',', [[,<c-g>u]]},
+        {'i', '.', [[.<c-g>u]]},
+        {'i', '!', [[!<c-g>u]]},
+        {'i', '?', [[?<c-g>u]]},
+        -- Jumplists mutations
+        {'n', '<expr> k', [[(v:count > 5 ? "m'" . v:count : "") . 'k']]},
+        {'n', '<expr> j', [[(v:count > 5 ? "m'" . v:count : "") . 'j']]},
+        -- Moving text
+        {'v', 'J', [[:m '>+1<cr>gv=gv]]},
+        {'v', 'K', [[:m '<-2<cr>gv=gv]]},
+        {'i', '<C-k>', [[<esc>:m .-2<cr>==]]},
+        {'i', '<C-j>', [[<esc>:m .+1<cr>==]]},
+        -- Copy to clipboard
+        {'n', '<leader>y', [["+y]]},
+        {'v', '<leader>y', [["+y]]},
+        {'n', '<C-a>', [[:%y+ <CR>]]},
+        -- Packer
+        {'n', '<leader>uu', [[:PackerUpdate<cr>]]},
     }
     M.maps(maps, opts)
 end
@@ -178,37 +201,6 @@ function M.octo()
     local maps = {
         {'n', '<leader>il', [[<cmd>Octo issue list<cr>]]},
         {'n', '<leader>ic', [[<cmd>Octo issue create<cr>]]},
-    }
-    M.maps(maps, opts)
-end
-
-function M.from_the_primageagen()
-    local opts = { nowait = false, noremap = false, silent = false }
-    local maps = {
-        -- Behave Vim
-        {'n', 'Y', [[y$]]},
-        -- Keeping it centered
-        {'n', 'n', [[nzzzv]]},
-        {'n', 'N', [[Nzzzv]]},
-        {'n', 'J', [[mzJ`z]]},
-        -- Undo break points
-        {'i', ',', [[,<c-g>u]]},
-        {'i', '.', [[.<c-g>u]]},
-        {'i', '!', [[!<c-g>u]]},
-        {'i', '?', [[?<c-g>u]]},
-        -- Jumplists mutations
-        {'n', '<expr> k', [[(v:count > 5 ? "m'" . v:count : "") . 'k']]},
-        {'n', '<expr> j', [[(v:count > 5 ? "m'" . v:count : "") . 'j']]},
-        -- Moving text
-        {'v', 'J', [[:m '>+1<cr>gv=gv]]},
-        {'v', 'K', [[:m '<-2<cr>gv=gv]]},
-        {'i', '<C-k>', [[<esc>:m .-2<cr>==]]},
-        {'i', '<C-j>', [[<esc>:m .+1<cr>==]]},
-        -- {'n', '<leader>j', [[:m .+1<cr>==]]},
-        -- {'n', '<leader>k', [[:m .-2<cr>==]]},
-        -- Copy to clipboard
-        {'n', '<leader>y', [["+y]]},
-        {'v', '<leader>y', [["+y]]},
     }
     M.maps(maps, opts)
 end
