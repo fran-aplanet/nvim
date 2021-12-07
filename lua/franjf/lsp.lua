@@ -8,23 +8,6 @@ local function on_attach()
     -- "Big Tech" "Cash Money" Johnson
 end
 
-
-
--- New
-require "lspconfig".efm.setup {
-    init_options = {documentFormatting = true},
-    settings = {
-        rootMarkers = {".git/"},
-        languages = {
-            lua = {
-                {formatCommand = "lua-format -i", formatStdin = true}
-            }
-        }
-    }
-}
-
-
-
 require'lspconfig'.pyright.setup{ 
     capabilities = capabilities;
     on_attach=on_attach; 

@@ -6,7 +6,7 @@ require "franjf.statusline"
 require "franjf.telescope"
 require "franjf.cmp"
 require "franjf.lsp"
-require "franjf.formatting"
+-- require "franjf.formatting"
 require "franjf.treesitter"
 require "franjf.icons"
 require "franjf.mappings".mappings()

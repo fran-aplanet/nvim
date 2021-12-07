@@ -75,7 +75,8 @@ end
 function M.personal()
     local opts = { nowait = true, noremap = true  ,silent = true }
     local maps = {
-        {'n', '<leader>w', [[:w<CR>]]},
+        -- {'n', '<leader>w', [[:w<CR>]]},
+        {'n', '<leader><leader>', [[:w<CR>]]},
         {'n', '<leader>x', [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]},
         {'n', '<leader>X', [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]},
         {'n', '<leader>r', [[:%s/\<<C-r><C-w>\>//g<left><left>]]},

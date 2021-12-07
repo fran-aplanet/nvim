@@ -2,10 +2,9 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
-
-    use 'mhartington/formatter.nvim'
+    -- Expand text objects with more targets to operate on
+    use 'wellle/targets.vim'
 	-- Auto close
-    -- use 'jiangmiao/auto-pairs'
     use 'windwp/nvim-autopairs'
 	-- LSP
     use 'neovim/nvim-lspconfig'
@@ -20,6 +19,7 @@ return require('packer').startup(function()
       'saadparwaiz1/cmp_luasnip',
       },
     }
+    use 'onsails/lspkind-nvim'
     use "rafamadriz/friendly-snippets"
 	-- Git
 	use 'tpope/vim-fugitive'
@@ -52,6 +52,9 @@ return require('packer').startup(function()
 	use 'gruvbox-community/gruvbox'
 	use {'dracula/vim', as = 'dracula' }
 	use 'ful1e5/onedark.nvim'
+    use 'bluz71/vim-nightfly-guicolors'
+    use 'matsuuu/pinkmare'
+    use 'pineapplegiant/spaceduck'
     use {
       "ahmedkhalf/project.nvim",
       config = function()
@@ -66,25 +69,5 @@ return require('packer').startup(function()
         require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
       end
     }
-    use 'tjdevries/colorbuddy.nvim'
-    -- Bookmark zone
-        -- use {'pwntester/octo.nvim', config=function()
-        --     require("octo").setup({
-        --         mappings = {
-        --             issue = {
-        --               close_issue = "<space>c",           -- close issue
-        --               list_issues = "<space>l",           -- list open issues on same repo
-        --               add_assignee = "<space>aa",          -- add assignee
-        --               remove_assignee = "<space>ra",       -- remove assignee
-        --               create_label = "<space>cl",          -- create label
-        --               add_label = "<space>al",             -- add label
-        --               remove_label = "<space>rl",          -- remove label
-        --               goto_issue = "<space>g",            -- navigate to a local repo issue
-        --               add_comment = "<space>ac",           -- add comment
-        --               delete_comment = "<space>dc",        -- delete comment
-        --             },
-        --         }
-        --     })
-            -- end}
 
 end)
