@@ -44,9 +44,6 @@ function M.core()
     local maps = {
         {'n', '<leader>v', [[:e $MYVIMRC<CR>]]},
         {'n', '<SPACE>', [[<Nop>]]},
-        -- {'i', 'ñ', [[<Esc>]]},
-        {'i', 'jk', [[<Esc>]]},
-        {'i', 'kj', [[<Esc>]]},
         {'i', '<C-c>', [[<Esc>]]},
         {'n', '<C-c>', [[:wq<cr>]]},
     }

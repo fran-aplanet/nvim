@@ -8,7 +8,9 @@ require'nvim-treesitter.configs'.setup {
       'javascript',
     },
     highlight = {
-      enable = true
+      enable = true,
+      -- New
+      use_languagetree = true,
     }
 
 }

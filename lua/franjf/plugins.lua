@@ -26,7 +26,7 @@ return require('packer').startup(function()
 	-- Substitution of brackets, quotes, etc
 	use 'tpope/vim-surround'
 	-- Comments
-	use 'tpope/vim-commentary'
+	-- use 'tpope/vim-commentary'
 	use 'folke/todo-comments.nvim'
     use {'kkoomen/vim-doge', run = ':call doge#install()'}
 	-- File Navigation
@@ -68,6 +68,20 @@ return require('packer').startup(function()
       config = function()
         require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
       end
+    }
+
+    use {
+      "max397574/better-escape.nvim",
+      config = function()
+        require("better_escape").setup()
+      end,
+    }
+
+    use {
+      "terrortylor/nvim-comment",
+      config = function()
+        require('nvim_comment').setup()
+      end,
     }
 
 end)
