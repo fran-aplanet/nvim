@@ -21,11 +21,11 @@ telescope.setup {
       entry_prefix = "  ",
       initial_mode = "insert",
       selection_strategy = "reset",
-      sorting_strategy = "ascending",
+      sorting_strategy = "descending",
       layout_strategy = "horizontal",
       layout_config = {
          horizontal = {
-            prompt_position = "top",
+            prompt_position = "bottom",
             preview_width = 0.55,
             results_width = 0.8,
          },
@@ -37,7 +37,7 @@ telescope.setup {
          preview_cutoff = 120,
       },
       file_sorter = require("telescope.sorters").get_fuzzy_file,
-      file_ignore_patterns = { "node_modules" },
+      file_ignore_patterns = {"%.pyc", "%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp", "node_modules"},
       generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
       path_display = { "truncate" },
       winblend = 0,
@@ -61,17 +61,26 @@ telescope.setup {
       },
    },
    extensions = {
-      fzf = {
-         fuzzy = true, -- false will only do exact matching
-         override_generic_sorter = false, -- override the generic sorter
-         override_file_sorter = true, -- override the file sorter
-         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-         -- the default case_mode is "smart_case"
-      },
+      -- fzf = {
+      --    fuzzy = true, -- false will only do exact matching
+      --    override_generic_sorter = false, -- override the generic sorter
+      --    override_file_sorter = true, -- override the file sorter
+      --    case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      --    -- the default case_mode is "smart_case"
+      -- },
+       fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        },
       media_files = {
          filetypes = { "png", "webp", "jpg", "jpeg" },
          find_cmd = "rg", -- find command (defaults to `fd`)
       },
+      pickers = {
+           live_grep = {
+               only_sort_text = true
+           }
+       },
    },
 }
 
