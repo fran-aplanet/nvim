@@ -9,7 +9,7 @@ require "franjf.lsp"
 require "franjf.treesitter"
 require "franjf.icons"
 require "franjf.mappings".mappings()
-require "franjf.settings".settings()
+require "franjf.options"
 
 vim.cmd([[
     augroup ChangeBackgroudColour
