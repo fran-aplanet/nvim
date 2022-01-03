@@ -8,7 +8,7 @@ require "franjf.cmp"
 require "franjf.lsp"
 require "franjf.treesitter"
 require "franjf.icons"
-require "franjf.mappings".mappings()
+require "franjf.keymaps"
 require "franjf.options"
 
 vim.cmd([[
