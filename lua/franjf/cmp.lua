@@ -31,7 +31,7 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
         -- Enter
-        ['<CR>'] = cmp.mapping.confirm({select = true}),
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
         -- Tab mapping
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
