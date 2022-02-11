@@ -23,6 +23,7 @@ return require('packer').startup(function()
     use "rafamadriz/friendly-snippets"
 	-- Git
 	use 'tpope/vim-fugitive'
+    use "lewis6991/gitsigns.nvim"
 	-- Substitution of brackets, quotes, etc
 	use 'tpope/vim-surround'
 	-- Comments
@@ -45,16 +46,17 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'mhartington/formatter.nvim'
 	-- Theming
     use 'glepnir/galaxyline.nvim'
 	use 'kyazdani42/nvim-web-devicons'
 	-- Themes
 	use 'gruvbox-community/gruvbox'
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin"
+    })
 	use {'dracula/vim', as = 'dracula' }
-	use 'ful1e5/onedark.nvim'
-    use 'bluz71/vim-nightfly-guicolors'
-    use 'matsuuu/pinkmare'
-    use 'pineapplegiant/spaceduck'
     use {
       "ahmedkhalf/project.nvim",
       config = function()
@@ -82,6 +84,13 @@ return require('packer').startup(function()
       config = function()
         require('nvim_comment').setup()
       end,
+    }
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
     }
 
 end)

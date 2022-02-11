@@ -4,7 +4,7 @@ require("todo-comments").setup {
         NOTE = { icon = " ", color = "hint", alt = { "NOTA" } },
         TODO = { icon = " ", color = "info", alt ={"PENDIENTE"} },
         DOCS = { icon = " ", color = "info", alt ={"TODODOCS", "DOCSTODO"} },
-        DONE = { icon = " ", color = "#50fa7b"},
+        BREAKINGCHANGE = { icon = " ", color = "error"},
         FIX = {icon = " ", color = "error", alt = { "BUG", "FIX", "ERROR" } },
         WARNING = { icon = " ", color = "warning", },
         PERFORMANCE = { icon = " ", color = "perf"},

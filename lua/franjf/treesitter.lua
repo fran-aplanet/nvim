@@ -9,7 +9,6 @@ require'nvim-treesitter.configs'.setup {
     },
     highlight = {
       enable = true,
-      -- New
       use_languagetree = true,
     }
 

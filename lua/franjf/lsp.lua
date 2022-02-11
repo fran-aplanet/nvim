@@ -22,4 +22,12 @@ require'lspconfig'.tsserver.setup{
 require'lspconfig'.html.setup{
   capabilities = capabilities,
   on_attach=on_attach; 
+  root_dir=lspconfig.util.root_pattern('manage.py');
 }
+
+-- Delete signs
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        signs = false
+    }
+)

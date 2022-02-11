@@ -61,16 +61,20 @@ telescope.setup {
       },
    },
    extensions = {
-      -- fzf = {
-      --    fuzzy = true, -- false will only do exact matching
-      --    override_generic_sorter = false, -- override the generic sorter
-      --    override_file_sorter = true, -- override the file sorter
-      --    case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-      --    -- the default case_mode is "smart_case"
-      -- },
        fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true,
+        },
+        file_browser = {
+              theme = "ivy",
+              mappings = {
+                ["i"] = {
+                  -- your custom insert mode mappings
+                },
+                ["n"] = {
+                  -- your custom normal mode mappings
+                },
+              },
         },
       media_files = {
          filetypes = { "png", "webp", "jpg", "jpeg" },
@@ -84,6 +88,8 @@ telescope.setup {
    },
 }
 
+
+-- Search dotfiles
 local M = {}
 M.search_dotfiles = function()
     require("telescope.builtin").find_files({
@@ -92,6 +98,7 @@ M.search_dotfiles = function()
     })
 end
 
+-- Set Backgrounds
 function set_background(content)
     vim.fn.system(
         "gsettings set org.gnome.desktop.background picture-uri file://".. content)
@@ -135,7 +142,6 @@ end
 
 M.anime_selector = image_selector("< Awesome! backgrounds > ", "~/Backgrounds")
 
-
 M.git_branches = function()
     require("telescope.builtin").git_branches({
         attach_mappings = function(_, map)
@@ -148,7 +154,7 @@ M.git_branches = function()
     })
 end
 
-local extensions = { "themes", "terms", "fzf" }
+local extensions = { "themes", "terms", "fzf" ,"refactoring"}
 local packer_repos = [["extensions", "telescope-fzf-native.nvim"]]
 
 if vim.fn.executable "ueberzug" == 1 then
