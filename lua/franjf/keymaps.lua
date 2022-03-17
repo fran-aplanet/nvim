@@ -23,10 +23,12 @@ keymap('c', '<C-l>', '<Right>', opts)
 keymap('v', '<leader>rr', '<Esc><cmd>lua require("telescope").extensions.refactoring.refactors()<CR>', opts)
 
 -- Movements
-keymap('n', '<leader>pv', ':Ex<cr>', opts)
+keymap('n', '<leader>e', ':Ex<cr>', opts)
 keymap('n', '<leader>+', ':vertical resize +10<cr>', opts)
 keymap('n', '<leader>-', ':vertical resize -10<cr>', opts)
 keymap('n', '<leader>h', ':wincmd h<cr>', opts)
+keymap('n', '<leader>j', ':wincmd j<cr>', opts)
+keymap('n', '<leader>k', ':wincmd k<cr>', opts)
 keymap('n', '<leader>l', ':wincmd l<cr>', opts)
 keymap('n', '<C-j>', ':cnext<cr>zz', opts)
 keymap('n', '<C-k>', ':cprevious<cr>zz', opts)
@@ -57,7 +59,7 @@ keymap('v', 'K', ':m "<-2<cr>gv=gv', opts)
 -- keymap('i', '<C-k>', '<esc>:m .-2<cr>==', opts)
 -- keymap('i', '<C-j>', '<esc>:m .+1<cr>==', opts)
 -- Copy to clipboard
-keymap('n', '<leader>y', '"+y', opts)
+keymap('n', '<leader>y', 'ggVG "+y', opts)
 keymap('v', '<leader>y', '"+y', opts)
 keymap('n', '<C-a>', ':%y+ <CR>', opts)
 
@@ -67,8 +69,9 @@ keymap('n', '<leader>uu', ':PackerUpdate<cr>', opts)
 -- Lsp
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 keymap('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-keymap('n', '<leader>n', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
+keymap('n', '<leader>n', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 keymap('n', '<leader>o', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 
 -- Telescope
 keymap('n', '<leader>af', '<cmd>lua require("telescope.builtin").git_files()<cr>', opts)

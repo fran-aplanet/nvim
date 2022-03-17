@@ -3,13 +3,15 @@ require("todo-comments").setup {
     keywords = {
         NOTE = { icon = " ", color = "hint", alt = { "NOTA" } },
         TODO = { icon = " ", color = "info", alt ={"PENDIENTE"} },
-        DOCS = { icon = " ", color = "info", alt ={"TODODOCS", "DOCSTODO"} },
-        BREAKINGCHANGE = { icon = " ", color = "error"},
+        DOCS = { icon = " ", color = "info", alt ={"TODODOCS", "DOCSTODO"} },
+        BREAKINGCHANGE = { icon = " ", color = "error"},
         FIX = {icon = " ", color = "error", alt = { "BUG", "FIX", "ERROR" } },
         WARNING = { icon = " ", color = "warning", },
-        PERFORMANCE = { icon = " ", color = "perf"},
         TESTING = { icon = "ﭧ ", color = "testing", alt ={"TEST", "PRUEBA"} },
         TODOMORE = { icon = " ", color = "hint"},
+        PRODUCTION = { icon = " ", color = "hint", alt={"PRODUCCION",}},
+        PERFORMANCE = { icon = " ", color = "perf"},
+        FEATURE = { icon = " ", color = "perf", alt={"FEAT",}},
   },
   colors = {
     error = { "LspDiagnosticsDefaultError", "ErrorMsg", "#DC2626" },

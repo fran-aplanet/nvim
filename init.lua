@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+require("impatient")
+
+
 require "franjf.plugins"
 require "franjf.todo"
 require "franjf.statusline"
@@ -36,6 +39,6 @@ vim.cmd([[
 
     augroup END
 ]])
-vim.cmd("colorscheme dracula")
+vim.cmd("colorscheme gruvbox")
 
 vim.o.termguicolors = true

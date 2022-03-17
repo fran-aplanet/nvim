@@ -2,6 +2,8 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
+    -- Improve startup making cache file
+    use 'lewis6991/impatient.nvim'
     -- Expand text objects with more targets to operate on
     use 'wellle/targets.vim'
 	-- Auto close
@@ -51,11 +53,10 @@ return require('packer').startup(function()
     use 'glepnir/galaxyline.nvim'
 	use 'kyazdani42/nvim-web-devicons'
 	-- Themes
-	use 'gruvbox-community/gruvbox'
-    use({
-        "catppuccin/nvim",
-        as = "catppuccin"
-    })
+    -- Not a big fan of gruuvbox ah?
+	use {'gruvbox-community/gruvbox'}
+    -- use {"ellisonleao/gruvbox.nvim"}
+    use {"luisiacc/gruvbox-baby"}
 	use {'dracula/vim', as = 'dracula' }
     use {
       "ahmedkhalf/project.nvim",
@@ -75,7 +76,7 @@ return require('packer').startup(function()
     use {
       "max397574/better-escape.nvim",
       config = function()
-        require("better_escape").setup()
+        require("better_escape").setup{mapping={"jk", "kj", }}
       end,
     }
 
