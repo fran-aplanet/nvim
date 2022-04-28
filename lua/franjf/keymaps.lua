@@ -64,7 +64,7 @@ keymap('v', '<leader>y', '"+y', opts)
 keymap('n', '<C-a>', ':%y+ <CR>', opts)
 
 -- Packer update
-keymap('n', '<leader>uu', ':PackerUpdate<cr>', opts)
+keymap('n', '<leader>U', ':PackerUpdate<cr>', opts)
 
 -- Lsp
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -81,18 +81,19 @@ keymap('n', '<leader>q', '<cmd>lua require("telescope.builtin").quickfix()<cr>',
 keymap('n', '<leader>tg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
 keymap('n', '<leader>tw', '<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<cr>', opts)
 keymap('n', '<leader>ts', '<cmd>lua require("telescope.builtin").lsp_document_symbols()<cr>', opts)
+keymap('n', '<leader>tb', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>', opts)
 keymap('n', '<leader>tr', '<cmd>lua require("telescope.builtin").lsp_references()<cr>', opts)
 keymap('n', '<leader>tm', '<cmd>lua require("telescope.builtin").man_pages()<cr>', opts)
+keymap('n', '<leader>tc', '<cmd>lua require("telescope.builtin").git_commits()<cr>', opts)
 keymap('n', '<leader>ti', '<cmd>lua require("telescope.builtin").lsp_implementations()<cr>', opts)
 keymap('n', '<leader>th', '<cmd>lua require("telescope.builtin").colorscheme()<cr>', opts)
 keymap('n', '<leader>ta', '<cmd>lua require("telescope.builtin").lsp_code_actions()<cr>', opts)
 keymap('n', '<leader>tk', '<cmd>lua require("telescope.builtin").keymaps()<cr>', opts)
+keymap('n', '<leader>tq', '<cmd>lua require("telescope.builtin").quickfix()<cr>', opts)
 keymap('n', '<leader>gb', '<cmd>lua require("franjf.telescope").git_branches()<cr>', opts)
-keymap('n', '<leader>fb', ':lua require("telescope").extensions.file_browser.file_browser()<cr>', opts)
 keymap('n', '<leader>vrc', '<cmd>lua require("franjf.telescope").search_dotfiles()<cr>', opts)
 keymap('n', '<leader>va', '<cmd>lua require("franjf.telescope").anime_selector()<cr>', opts)
 keymap('n', '<leader>tt', '<cmd>TodoTelescope<cr>', opts)
-keymap('n', '<leader>tp', '<cmd>Telescope projects<cr>', opts)
 
 -- Symbols Outline
 keymap('n', '<leader>so', '<cmd>SymbolsOutline<cr>', opts)

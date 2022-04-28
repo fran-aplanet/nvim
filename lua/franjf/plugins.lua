@@ -22,6 +22,7 @@ return require('packer').startup(function()
       },
     }
     use 'onsails/lspkind-nvim'
+    -- use 'ray-x/lsp_signature.nvim'
     use "rafamadriz/friendly-snippets"
 	-- Git
 	use 'tpope/vim-fugitive'
@@ -55,16 +56,10 @@ return require('packer').startup(function()
 	-- Themes
     -- Not a big fan of gruuvbox ah?
 	use {'gruvbox-community/gruvbox'}
+    use 'sainnhe/gruvbox-material'
     -- use {"ellisonleao/gruvbox.nvim"}
     use {"luisiacc/gruvbox-baby"}
 	use {'dracula/vim', as = 'dracula' }
-    use {
-      "ahmedkhalf/project.nvim",
-      config = function()
-            require("project_nvim").setup {
-            }
-      end
-    }
     use {
       'phaazon/hop.nvim',
       as = 'hop',

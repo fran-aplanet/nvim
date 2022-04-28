@@ -349,7 +349,7 @@ insert_blank_line_at_right()
 insert_right{
   LineInfo = {
     provider = 'LineColumn',
-    separator = '',
+    separator = 'Ln',
     separator_highlight = {colors.green, colors.line_bg},
     highlight = {colors.fg,colors.line_bg},
         condition = checkwidth,

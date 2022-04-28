@@ -15,14 +15,7 @@ end
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			-- For `vsnip` user.
-			-- vim.fn["vsnip#anonymous"](args.body)
-
-			-- For `luasnip` user.
 			require("luasnip").lsp_expand(args.body)
-
-			-- For `ultisnips` user.
-			-- vim.fn["UltiSnips#Anon"](args.body)
 		end,
 	},
 	mapping = {
@@ -31,7 +24,7 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
         -- Enter
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        ['<CR>'] = cmp.mapping.confirm({select = true}),
         -- Tab mapping
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -58,45 +51,28 @@ cmp.setup({
 
 	formatting = {
 	    format = lspkind.cmp_format({
-	      mode = 'symbol', -- show only symbol annotations
-	      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-	      -- The function below will be called before any actual modifications from lspkind
-	      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-	      before = function (entry, vim_item)
-		return vim_item
-	      end
-	    })
+            mode = "symbol_text",
+            menu = ({
+                buffer = "[buf]",
+                nvim_lsp = "[LSP]",
+                luasnip = "[snip]",
+                nvim_lua = "[lua]",
+                path = "[path]",
+            })
+	    }),
 	},
 
 	sources = {
-        -- tabnine completion? yayaya
-        -- { name = "cmp_tabnine" },
-
 		{ name = "nvim_lsp" },
-
-		-- For vsnip user.
-		-- { name = 'vsnip' },
-
-		-- For luasnip user.
 		{ name = "luasnip" },
-
-		-- For ultisnips user.
-		-- { name = 'ultisnips' },
-
 		{ name = "buffer" },
+		{ name = "path" },
 	},
 })
 
 local _, autopairs = pcall(require, 'nvim-autopairs')
 autopairs.setup()
 
--- require('nvim-autopairs.completion.cmp').setup({
--- require('cmp').setup({
---     map_cr = true,
---     map_complete = true,
---     auto_select = true,
---     -- enable_check_bracket_line = false
--- })
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require('cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' }, map_complete = true,  }))
