@@ -30,7 +30,7 @@ return require('packer').startup(function()
 	-- Substitution of brackets, quotes, etc
 	use 'tpope/vim-surround'
 	-- Comments
-	-- use 'tpope/vim-commentary'
+	use 'tpope/vim-commentary'
 	use 'folke/todo-comments.nvim'
     use {'kkoomen/vim-doge', run = ':call doge#install()'}
 	-- File Navigation
@@ -43,13 +43,15 @@ return require('packer').startup(function()
   	'nvim-telescope/telescope.nvim',
   	requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use 'nvim-telescope/telescope-fzy-native.nvim'
+	-- use 'nvim-telescope/telescope-fzy-native.nvim'
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	-- Syntax
      use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use 'mhartington/formatter.nvim'
+    -- use 'mhartington/formatter.nvim'
+    use 'sbdchd/neoformat'
 	-- Theming
     use 'glepnir/galaxyline.nvim'
 	use 'kyazdani42/nvim-web-devicons'
@@ -76,11 +78,21 @@ return require('packer').startup(function()
     }
 
     use {
-      "terrortylor/nvim-comment",
-      config = function()
-        require('nvim_comment').setup()
-      end,
+      "nvim-neotest/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "antoinemadec/FixCursorHold.nvim"
+      }
     }
+
+    use "sainnhe/everforest"
+    -- use {
+    --   "terrortylor/nvim-comment",
+    --   config = function()
+    --     require('nvim_comment').setup()
+    --   end,
+    -- }
     use {
         "ThePrimeagen/refactoring.nvim",
         requires = {
@@ -88,5 +100,4 @@ return require('packer').startup(function()
             {"nvim-treesitter/nvim-treesitter"}
         }
     }
-
 end)

@@ -11,7 +11,6 @@ require "franjf.cmp"
 require "franjf.lsp"
 require "franjf.treesitter"
 require "franjf.gitsigns"
-require "franjf.formatter"
 require "franjf.refactoring"
 require "franjf.icons"
 require "franjf.keymaps"
@@ -41,13 +40,6 @@ vim.cmd([[
 
     augroup END
 ]])
--- vim.g.gruvbox_material_palette = "original"
--- vim.g.gruvbox_material_enable_bold = 1
--- vim.g.gruvbox_material_enable_italic = 1
--- vim.g.gruvbox_material_transparent_background = 1
--- vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
--- vim.g.gruvbox_material_better_performance = 1
--- vim.cmd("colorscheme gruvbox-material")
 vim.cmd("colorscheme gruvbox")
 
 vim.o.termguicolors = true

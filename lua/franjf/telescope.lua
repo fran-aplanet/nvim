@@ -37,7 +37,7 @@ telescope.setup {
          preview_cutoff = 120,
       },
       file_sorter = require("telescope.sorters").get_fzy_sorter,
-      file_ignore_patterns = {"%.pyc", "%.css" ,"%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp", "node_modules", "_cookie", "__init__"},
+      file_ignore_patterns = {"%.pyc", "%.css" ,"%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp", "node_modules","_cookie", "__init__", "%real_python", "%.json", "%.mp4", "%.ttf", "%.woff", "%.woff2", "%.otf"},
       generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
       path_display = { "truncate" },
       winblend = 0,
@@ -61,30 +61,36 @@ telescope.setup {
       },
    },
    extensions = {
-       fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
-        },
-        file_browser = {
-              theme = "ivy",
-              mappings = {
-                ["i"] = {
-                  -- your custom insert mode mappings
-                },
-                ["n"] = {
-                  -- your custom normal mode mappings
-                },
-              },
-        },
-      media_files = {
-         filetypes = { "png", "webp", "jpg", "jpeg" },
-         find_cmd = "rg", -- find command (defaults to `fd`)
-      },
-      pickers = {
-           live_grep = {
-               only_sort_text = true
-           }
-       },
+       fzf = {
+          fuzzy = true,                    -- false will only do exact matching
+          override_generic_sorter = true,  -- override the generic sorter
+          override_file_sorter = true,     -- override the file sorter
+          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+    },
+   --     fzy_native = {
+   --          override_generic_sorter = false,
+   --          override_file_sorter = true,
+   --      },
+   --      file_browser = {
+   --            theme = "ivy",
+   --            mappings = {
+   --              ["i"] = {
+   --                -- your custom insert mode mappings
+   --              },
+   --              ["n"] = {
+   --                -- your custom normal mode mappings
+   --              },
+   --            },
+   --      },
+	media_files = {
+	 filetypes = { "png", "webp", "jpg", "jpeg" },
+	 find_cmd = "rg", -- find command (defaults to `fd`)
+	},
+   --    pickers = {
+   --         live_grep = {
+   --             only_sort_text = true
+   --         }
+   --     },
    },
 }
 

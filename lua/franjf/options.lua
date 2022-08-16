@@ -13,6 +13,7 @@ local options = {
     updatetime     = 50,
     showbreak      = '↳',
     cursorline     =  true,
+    mouse          = '',
     -- Tab
     expandtab      = true,
     smartindent    = true,
@@ -31,12 +32,16 @@ local options = {
     linebreak      = true,
     number         = true,
     relativenumber = true,
-    wrap           = true
+    wrap           = true,
+    textwidth      = 0,
+    -- New
+    clipboard      = "unnamed"
 }
 
 local options_plugins = {
     netrw_banner               = 0,
     doge_doc_standard_python   = "google",
+    neoformat_enabled_python   = {'black',},
 }
 
 for k,v in pairs(options) do

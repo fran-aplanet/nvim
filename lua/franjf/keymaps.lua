@@ -39,7 +39,8 @@ keymap('n', 'M', 'm', opts)
 
 -- Personal
 keymap('n', '<leader><leader>', ':w<cr>', opts)
-keymap('n', '<leader>F', ':Format<cr>', opts)
+keymap('n', '<leader>F', ':Neoformat<cr>', opts)
+keymap('v', '<leader>F', ':Neoformat<cr>', opts)
 
 -- Probably already in nvim
 keymap('n', '<leader>Y', 'y$', opts)
@@ -119,3 +120,6 @@ keymap('n', '<leader>5', '<cmd>lua require("harpoon.ui").nav_file(5)<cr>', opts)
 
 -- Hop
 keymap('n', '<leader>s', '<cmd>lua require"hop".hint_char2()<cr>', opts)
+
+-- Neotest
+-- keymap('n', '<leader>x', '<cmd>lua require"neotest".run.run(vim.fn.expand("%"))<cr>', opts)

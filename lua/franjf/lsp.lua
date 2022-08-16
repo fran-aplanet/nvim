@@ -13,6 +13,19 @@ require'lspconfig'.pyright.setup{
     on_attach=on_attach; 
     -- Django guy here 
     root_dir=lspconfig.util.root_pattern('manage.py');
+    settings={
+        python = {
+          analysis = {
+            useLibraryCodeForTypes = true,
+            diagnosticSeverityOverrides = {
+              reportGeneralTypeIssues = "none",
+              reportOptionalMemberAccess = "none",
+              reportOptionalSubscript = "none",
+              reportPrivateImportUsage = "none",
+              },
+            }
+        }
+    }
 }
 require'lspconfig'.tsserver.setup{
   capabilities = capabilities,
