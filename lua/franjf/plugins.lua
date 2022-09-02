@@ -53,7 +53,11 @@ return require('packer').startup(function()
     -- use 'mhartington/formatter.nvim'
     use 'sbdchd/neoformat'
 	-- Theming
-    use 'glepnir/galaxyline.nvim'
+    -- use 'glepnir/galaxyline.nvim'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 	use 'kyazdani42/nvim-web-devicons'
 	-- Themes
     -- Not a big fan of gruuvbox ah?
@@ -87,7 +91,10 @@ return require('packer').startup(function()
     }
 
     use "sainnhe/everforest"
+    use 'folke/tokyonight.nvim'
+
     -- use {
+        --
     --   "terrortylor/nvim-comment",
     --   config = function()
     --     require('nvim_comment').setup()
