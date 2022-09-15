@@ -53,18 +53,15 @@ return require('packer').startup(function()
     -- use 'mhartington/formatter.nvim'
     use 'sbdchd/neoformat'
 	-- Theming
-    -- use 'glepnir/galaxyline.nvim'
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    use 'glepnir/galaxyline.nvim'
+    -- use {
+    --   'nvim-lualine/lualine.nvim',
+    --   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    -- }
 	use 'kyazdani42/nvim-web-devicons'
 	-- Themes
-    -- Not a big fan of gruuvbox ah?
-	use {'gruvbox-community/gruvbox'}
-    use 'sainnhe/gruvbox-material'
-    -- use {"ellisonleao/gruvbox.nvim"}
-    use {"luisiacc/gruvbox-baby"}
+	-- use {'gruvbox-community/gruvbox'}
+    use {"ellisonleao/gruvbox.nvim"}
 	use {'dracula/vim', as = 'dracula' }
     use {
       'phaazon/hop.nvim',
@@ -89,9 +86,8 @@ return require('packer').startup(function()
         "antoinemadec/FixCursorHold.nvim"
       }
     }
-
-    use "sainnhe/everforest"
     use 'folke/tokyonight.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- use {
         --

@@ -37,7 +37,7 @@ telescope.setup {
          preview_cutoff = 120,
       },
       file_sorter = require("telescope.sorters").get_fzy_sorter,
-      file_ignore_patterns = {"%.pyc", "%.css" ,"%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp", "node_modules","_cookie", "__init__", "%real_python", "%.json", "%.mp4", "%.ttf", "%.woff", "%.woff2", "%.otf", "%.js"},
+      file_ignore_patterns = {"%.pyc", "%.css" ,"%.pdf", "%.xml", "%.xlsx", "%.xls", "%.docx", "%.zip", "%.rar", "%.jpg", "%.png", "%.svg", "%.webp", "node_modules","_cookie", "__init__", "%real_python", "%.json", "%.mp4", "%.ttf", "%.woff", "%.woff2", "%.otf" ,"%.min.js", "%.js"},
       generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
       path_display = { "truncate" },
       winblend = 0,
