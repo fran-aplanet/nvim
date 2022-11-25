@@ -9,6 +9,7 @@ local options = {
     backup         = false,
     signcolumn     = 'yes',
     autoread       = true,
+    guicursor      = '',
     scrolloff      = 8,
     updatetime     = 50,
     showbreak      = '↳',

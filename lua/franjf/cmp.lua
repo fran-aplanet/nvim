@@ -63,6 +63,7 @@ cmp.setup({
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
+		{ name = "nvim_lua" },
 		{ name = "buffer" },
 		{ name = "path" },
 	},
@@ -70,7 +71,7 @@ cmp.setup({
 
 local _, autopairs = pcall(require, 'nvim-autopairs')
 autopairs.setup()
-
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' }, map_complete = true,  }))
+
+require("luasnip.loaders.from_vscode").lazy_load()

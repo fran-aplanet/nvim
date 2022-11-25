@@ -22,6 +22,8 @@ keymap('c', '<C-l>', '<Right>', opts)
 
 keymap('v', '<leader>rr', '<Esc><cmd>lua require("telescope").extensions.refactoring.refactors()<CR>', opts)
 
+keymap('n', '<C-u>', '<C-u>zz', opts)
+keymap('n', '<C-d>', '<C-d>zz', opts)
 -- Movements
 keymap('n', '<leader>e', ':Ex<cr>', opts)
 keymap('n', '<leader>+', ':vertical resize +10<cr>', opts)

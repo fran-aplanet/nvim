@@ -1,7 +1,7 @@
 local lspconfig = require('lspconfig')
 -- Snippets support
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local function on_attach()
     -- TJ told me to do this and I should do it because he is Telescopic
@@ -12,7 +12,7 @@ require'lspconfig'.pyright.setup{
     capabilities = capabilities;
     on_attach=on_attach; 
     -- Django guy here 
-    root_dir=lspconfig.util.root_pattern('manage.py');
+    -- root_dir=lspconfig.util.root_pattern('manage.py');
     settings={
         python = {
           analysis = {
