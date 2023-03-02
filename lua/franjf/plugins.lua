@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- My personal plugins for daily use
+  use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use "ellisonleao/gruvbox.nvim"
@@ -24,6 +25,19 @@ return require('packer').startup(function(use)
         require("better_escape").setup{mapping={"jk", "kj", }}
       end,
   }
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  use({
+  'glepnir/galaxyline.nvim',
+  branch = 'main',
+  -- your statusline
+  config = function()
+    require('my_statusline')
+  end,
+  requires = { 'nvim-tree/nvim-web-devicons', opt = false },
+})
 
   -- I dont know if I still need this
   

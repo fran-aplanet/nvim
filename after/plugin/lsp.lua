@@ -1,8 +1,20 @@
 local lsp = require("lsp-zero")
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
 
 lsp.preset("recommended")
 
+lsp.ensure_installed({
+  'tsserver',
+  'pyright',
+  'html',
+})
+
 local cmp = require('cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['S-Tab'] = cmp.mapping.select_prev_item(cmp_select),
