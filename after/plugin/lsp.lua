@@ -1,46 +1,48 @@
-local lspconfig = require('lspconfig')
--- Snippets support
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local lsp = require("lsp-zero")
 
-local function on_attach()
-    -- TJ told me to do this and I should do it because he is Telescopic
-    -- "Big Tech" "Cash Money" Johnson
-end
+lsp.preset("recommended")
 
-require'lspconfig'.pyright.setup{ 
-    capabilities = capabilities;
-    on_attach=on_attach; 
-    -- Django guy here 
-    -- root_dir=lspconfig.util.root_pattern('manage.py');
-    settings={
-        python = {
-          analysis = {
-            useLibraryCodeForTypes = true,
-            diagnosticSeverityOverrides = {
-              reportGeneralTypeIssues = "none",
-              reportOptionalMemberAccess = "none",
-              reportOptionalSubscript = "none",
-              reportPrivateImportUsage = "none",
-              },
-            }
-        }
+local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ['S-Tab'] = cmp.mapping.select_prev_item(cmp_select),
+  ['Tab'] = cmp.mapping.select_next_item(cmp_select),
+  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ["<C-Space>"] = cmp.mapping.complete(),
+})
+
+cmp_mappings['<C-p>'] = nil
+cmp_mappings['<C-n>'] = nil
+
+lsp.setup_nvim_cmp({
+  mapping = cmp_mappings
+})
+
+lsp.set_preferences({
+    suggest_lsp_servers = false,
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I'
     }
-}
-require'lspconfig'.tsserver.setup{
-  capabilities = capabilities,
-  on_attach=on_attach 
-}
+})
 
-require'lspconfig'.html.setup{
-  capabilities = capabilities,
-  on_attach=on_attach; 
-  root_dir=lspconfig.util.root_pattern('manage.py');
-}
+lsp.on_attach(function(client, bufnr)
+  local opts = {buffer = bufnr, remap = false}
 
--- Delete signs
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        signs = false
-    }
-)
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "rn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>o", function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("n", "<leader>n", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<leader>w", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+end)
+
+lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true
+})
