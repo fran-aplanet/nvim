@@ -29,23 +29,17 @@ return require('packer').startup(function(use)
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
-  use({
-  'glepnir/galaxyline.nvim',
-  branch = 'main',
-  -- your statusline
-  config = function()
-    require('my_statusline')
-  end,
-  requires = { 'nvim-tree/nvim-web-devicons', opt = false },
-})
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
-  -- I dont know if I still need this
   
   -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
   -- use "lewis6991/gitsigns.nvim"
   -- use 'windwp/nvim-autopairs'
   -- use 'glepnir/galaxyline.nvim'
-  -- use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-web-devicons'
 
   -- Basics
   use {
