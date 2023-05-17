@@ -3,7 +3,17 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- Movements in insert and command mode
+vim.keymap.set('i', '<C-h>', '<Left>')
+vim.keymap.set('i', '<C-j>', '<Down>')
+vim.keymap.set('i', '<C-k>', '<Up>')
+vim.keymap.set('i', '<C-l>', '<Right>')
+vim.keymap.set('c', '<C-h>', '<Left>')
+vim.keymap.set('c', '<C-j>', '<Down>')
+vim.keymap.set('c', '<C-k>', '<Up>')
+vim.keymap.set('c', '<C-l>', '<Right>')
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -17,15 +27,10 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/franjf/plugins.lua
 vim.keymap.set('n', 'm', '<C-d>')
 vim.keymap.set('n', ',', '<C-u>')
 --vim.keymap.set("x", "<leader>p", [["_dP]])
--- Movements in insert and command mode
-vim.keymap.set('i', '<C-h>', '<Left>')
-vim.keymap.set('i', '<C-j>', '<Down>')
-vim.keymap.set('i', '<C-k>', '<Up>')
-vim.keymap.set('i', '<C-l>', '<Right>')
-vim.keymap.set('c', '<C-h>', '<Left>')
-vim.keymap.set('c', '<C-j>', '<Down>')
-vim.keymap.set('c', '<C-k>', '<Up>')
-vim.keymap.set('c', '<C-l>', '<Right>')
+vim.keymap.set('n', '<leader>h', ':wincmd h<cr>')
+vim.keymap.set('n', '<leader>j', ':wincmd j<cr>')
+vim.keymap.set('n', '<leader>k', ':wincmd k<cr>')
+vim.keymap.set('n', '<leader>l', ':wincmd l<cr>')
 
 
 -- Copy to clipboard

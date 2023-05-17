@@ -4,6 +4,7 @@ vim.g.netrw_browse_split = 0
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
+vim.opt.mouse = ""
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4

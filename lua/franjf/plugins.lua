@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use "ellisonleao/gruvbox.nvim"
+  use "sainnhe/gruvbox-material"
   use {
       "max397574/better-escape.nvim",
       config = function()

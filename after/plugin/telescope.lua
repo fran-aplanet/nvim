@@ -2,7 +2,7 @@ local actions = require("telescope.actions")
 
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { "node_modules", "%.jpg", "%.png", "%.svg", "%.mp4", "%.mp3", "%.webp", "%.min.", "%.ico"},
+    file_ignore_patterns = { "node_modules", "%.jpg", "%.png", "%.svg", "%.mp4", "%.mp3", "%.webp", "%.min.", "%.ico", "__init__.py"},
     mappings = {
         i = {
           ["<C-j>"] = actions.move_selection_next,
@@ -32,3 +32,7 @@ end)
 vim.keymap.set('n', '<leader>th', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<leader>tq', builtin.quickfix, {})
+vim.keymap.set('n', '<leader>tw', builtin.lsp_dynamic_workspace_symbols, {})
+vim.keymap.set('n', '<leader>ts', builtin.lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>th', builtin.colorscheme, {})
+vim.keymap.set('n', '<leader>tr', builtin.lsp_references, {})

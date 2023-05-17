@@ -6,8 +6,8 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
-  'pyright',
   'html',
+  'pyright',
 })
 
 local cmp = require('cmp')
