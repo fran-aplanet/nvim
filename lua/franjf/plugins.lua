@@ -18,8 +18,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
-  use "ellisonleao/gruvbox.nvim"
-  use "sainnhe/gruvbox-material"
+
   use {
       "max397574/better-escape.nvim",
       config = function()
@@ -35,14 +34,16 @@ return require('packer').startup(function(use)
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
-  
-  -- use {'kkoomen/vim-doge', run = ':call doge#install()'}
-  -- use "lewis6991/gitsigns.nvim"
-  -- use 'windwp/nvim-autopairs'
-  -- use 'glepnir/galaxyline.nvim'
+  use {
+  'lewis6991/gitsigns.nvim',
+  config = function()
+    require('gitsigns').setup({numhl=true})
+  end
+}
   use 'kyazdani42/nvim-web-devicons'
 
   -- Basics
+  use "nvim-telescope/telescope-fzy-native.nvim"
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	  requires = { {'nvim-lua/plenary.nvim'} }
@@ -56,8 +57,9 @@ return require('packer').startup(function(use)
       end
   })
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
-  use("nvim-treesitter/nvim-treesitter-context");
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
   use("theprimeagen/harpoon")
+
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',

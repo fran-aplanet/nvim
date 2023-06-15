@@ -2,7 +2,7 @@ local actions = require("telescope.actions")
 
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { "node_modules", "%.jpg", "%.png", "%.svg", "%.mp4", "%.mp3", "%.webp", "%.min.", "%.ico", "__init__.py"},
+    file_ignore_patterns = { "node_modules", "%.jpg", "%.png", "%.svg", "%.mp4", "%.mp3", "%.webp", "%.min.", "%.ico", "__init__.py", "CACHE", "dist"},
     mappings = {
         i = {
           ["<C-j>"] = actions.move_selection_next,
@@ -21,7 +21,16 @@ require('telescope').setup{
       }
     }
   },
+  extensions = {
+        fzy_native = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+        }
+    }
 }
+
+require('telescope').load_extension('fzy_native')
+
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})

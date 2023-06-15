@@ -19,8 +19,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-c>", ":wq<CR>")
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/franjf/plugins.lua<CR>");
@@ -36,7 +36,7 @@ vim.keymap.set('n', '<leader>l', ':wincmd l<cr>')
 -- Copy to clipboard
 vim.keymap.set('n', '<leader>y', 'ggVG "+y')
 vim.keymap.set('v', '<leader>y', '"+y')
-vim.keymap.set('n', '<C-a>', ':%y+ <CR>')
+vim.keymap.set('n', '<C-y>', ':%y+ <CR>')
 
 -- Packer update
 vim.keymap.set('n', '<leader>U', ':PackerUpdate<cr>')
