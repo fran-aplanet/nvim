@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -37,9 +36,6 @@ vim.keymap.set('n', '<leader>l', ':wincmd l<cr>')
 vim.keymap.set('n', '<leader>y', 'ggVG "+y')
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<C-y>', ':%y+ <CR>')
-
--- Packer update
-vim.keymap.set('n', '<leader>U', ':PackerUpdate<cr>')
 
 -- Formatting
 vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
