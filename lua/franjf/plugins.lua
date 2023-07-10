@@ -1,25 +1,4 @@
 return {
-	{
-	  "folke/flash.nvim",
-	  event = "VeryLazy",
-	  opts = {},
-	  keys = {
-	    {
-	      "<leader>s",
-	      mode = { "n", "x", "o" },
-	      function()
-		require("flash").jump()
-	      end,
-	      desc = "Flash",
-	    },
-	  },
-	},
-
-
-
-
-
-
   'tpope/vim-fugitive',
    'tpope/vim-surround',
    'tpope/vim-commentary',
@@ -37,13 +16,6 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true }
     },
-
-   {
-  'lewis6991/gitsigns.nvim',
-  config = function()
-    require('gitsigns').setup({numhl=true})
-  end
-},
   -- Basics
    "nvim-telescope/telescope-fzy-native.nvim",
    {
@@ -63,11 +35,29 @@ return {
   ({ 'rose-pine/neovim', name = 'rose-pine' }),
    { "arturgoms/moonbow.nvim" },
    { "luisiacc/gruvbox-baby" },
+   'Mofiqul/dracula.nvim',
 
+   {
+    "zbirenbaum/copilot.lua",
+    enabled = false,
+    event = "VeryLazy",
+    config = true,
+    enabled = true,
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
+  },
+    {
+      "zbirenbaum/copilot-cmp",
+      config = function ()
+        require("copilot_cmp").setup()
+      end
+    },
   "theprimeagen/harpoon",
    "folke/tokyonight.nvim",
-
-
    {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
