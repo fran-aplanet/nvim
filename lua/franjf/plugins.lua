@@ -37,25 +37,6 @@ return {
    { "luisiacc/gruvbox-baby" },
    'Mofiqul/dracula.nvim',
 
-   {
-    "zbirenbaum/copilot.lua",
-    enabled = false,
-    event = "VeryLazy",
-    config = true,
-    enabled = true,
-    cmd = "Copilot",
-    event = "InsertEnter",
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-    },
-  },
-    {
-      "zbirenbaum/copilot-cmp",
-      config = function ()
-        require("copilot_cmp").setup()
-      end
-    },
   "theprimeagen/harpoon",
    "folke/tokyonight.nvim",
    {
@@ -80,6 +61,8 @@ return {
 		  {'rafamadriz/friendly-snippets'},
 	  }
   },
+
+  "github/copilot.vim"
 
 
 
