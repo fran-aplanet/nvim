@@ -13,19 +13,32 @@ lsp.ensure_installed({
 lsp.nvim_workspace()
 
 
+local lspkind = require('lspkind')
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['j'] = cmp.mapping.select_next_item(cmp_select),
+  ['k'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
+  ["<C-p>"] = nil,
+  ["<C-n>"] = nil,
+  ["<Tab>"] = nil,
+  ["<S-Tab>"] = nil,
 })
 
-cmp_mappings['<C-p>'] = nil
-cmp_mappings['<C-n>'] = nil
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 50,
+      ellipsis_char = '...',
+      before = function (entry, vim_item)
+        return vim_item
+      end
+    })
+  },
+}
 
 cmp.event:on(
   'confirm_done',

@@ -36,6 +36,7 @@ return {
    { "arturgoms/moonbow.nvim" },
    { "luisiacc/gruvbox-baby" },
    'Mofiqul/dracula.nvim',
+   "onsails/lspkind.nvim",
 
   "theprimeagen/harpoon",
    "folke/tokyonight.nvim",
