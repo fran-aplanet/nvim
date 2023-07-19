@@ -33,6 +33,7 @@ return {
   ({"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}),
    'nvim-treesitter/nvim-treesitter-context',
   ({ 'rose-pine/neovim', name = 'rose-pine' }),
+   "folke/tokyonight.nvim",
    { "arturgoms/moonbow.nvim" },
    { "luisiacc/gruvbox-baby" },
    'Mofiqul/dracula.nvim',
@@ -63,7 +64,26 @@ return {
 	  }
   },
 
-  "github/copilot.vim"
+  "github/copilot.vim",
+  {
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  opts = {
+       modes = {
+        search = {
+          enabled = false,
+          highlight = { backdrop = false },
+          jump = { history = true, register = true, nohlsearch = true },
+          search = {
+          },
+        },
+      },
+  },
+  -- stylua: ignore
+  keys = {
+    { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+  }
+},
 
 
 
