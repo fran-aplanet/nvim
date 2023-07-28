@@ -3,6 +3,7 @@ local actions = require("telescope.actions")
 require('telescope').setup{
   defaults = {
     file_ignore_patterns = { "node_modules", "%.jpg", "%.png", "%.svg", "%.mp4", "%.mp3", "%.webp", "%.min.", "%.ico", "__init__.py", "CACHE", "dist", "%.bin"},
+    path_display = { "truncate" },
     mappings = {
         i = {
           ["<C-j>"] = actions.move_selection_next,

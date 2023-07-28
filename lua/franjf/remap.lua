@@ -12,6 +12,7 @@ vim.keymap.set('c', '<C-j>', '<Down>')
 vim.keymap.set('c', '<C-k>', '<Up>')
 vim.keymap.set('c', '<C-l>', '<Right>')
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-f>", "<Nop>")
 
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
@@ -36,9 +37,6 @@ vim.keymap.set('n', '<leader>l', ':wincmd l<cr>')
 vim.keymap.set('n', '<leader>y', 'ggVG "+y')
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<C-y>', ':%y+ <CR>')
-
--- Formatting
-vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
 
 -- Git
 vim.keymap.set('n', '<leader>gs', '<cmd>G<cr>')
