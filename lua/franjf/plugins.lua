@@ -22,21 +22,8 @@ return {
 	  'nvim-telescope/telescope.nvim', version = '0.1.0',
 	  dependencies = { {'nvim-lua/plenary.nvim'} }
   },
-  ({
-      "folke/trouble.nvim",
-      config = function()
-          require("trouble").setup {
-              icons = false,
-          }
-      end
-  }),
   ({"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}),
    'nvim-treesitter/nvim-treesitter-context',
-  ({ 'rose-pine/neovim', name = 'rose-pine' }),
-   "folke/tokyonight.nvim",
-   { "arturgoms/moonbow.nvim" },
-   { "luisiacc/gruvbox-baby" },
-   'Mofiqul/dracula.nvim',
    "onsails/lspkind.nvim",
 
   "theprimeagen/harpoon",
@@ -86,7 +73,52 @@ return {
   }
 },
 
+{
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+},
+{ 'mhartington/formatter.nvim' },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
+  },
 
+{
+"folke/trouble.nvim",
+ dependencies = { "nvim-tree/nvim-web-devicons" },
+ opts = {}
+ },
 
+ "jose-elias-alvarez/null-ls.nvim",
+ {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+},
+
+ {
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {}
+ },
+
+ { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+ {"rebelot/kanagawa.nvim"},
+  ({ 'rose-pine/neovim', name = 'rose-pine' }),
+ "folke/tokyonight.nvim",
 
 }

@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", ":Neotree toggle show reveal<cr>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -23,14 +23,13 @@ vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/franjf/plugins.lua<CR>");
 vim.keymap.set('n', 'm', '<C-d>')
 vim.keymap.set('n', ',', '<C-u>')
 --vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set('n', '<leader>h', ':wincmd h<cr>')
-vim.keymap.set('n', '<leader>j', ':wincmd j<cr>')
-vim.keymap.set('n', '<leader>k', ':wincmd k<cr>')
-vim.keymap.set('n', '<leader>l', ':wincmd l<cr>')
+vim.keymap.set('n', '<S-h>', ':wincmd h<cr>')
+vim.keymap.set('n', '<S-j>', ':wincmd j<cr>')
+vim.keymap.set('n', '<S-k>', ':wincmd k<cr>')
+vim.keymap.set('n', '<S-l>', ':wincmd l<cr>')
 
 
 -- Copy to clipboard
@@ -47,6 +46,21 @@ vim.keymap.set('n', '<leader>gaps', '<cmd>Git submodule foreach --recursive git 
 vim.keymap.set('n', '<leader>gac', '<cmd>Git submodule foreach --recursive git commit -am "fix"<cr>')
 vim.keymap.set('n', '<leader>gapl', '<cmd>:Git pull <bar> :Git submodule foreach --recursive git pull<cr>')
 vim.keymap.set('n', '<leader>gop', '<cmd>Git -c push.default=current push<cr>')
+
+-- Trouble
+vim.keymap.set("n", "<leader>xx", function() require("trouble").open() end)
+vim.keymap.set("n", "<leader>xw", function() require("trouble").open("workspace_diagnostics") end)
+vim.keymap.set("n", "<leader>xd", function() require("trouble").open("document_diagnostics") end)
+vim.keymap.set("n", "<leader>xq", function() require("trouble").open("quickfix") end)
+vim.keymap.set("n", "<leader>xl", function() require("trouble").open("loclist") end)
+vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end)
+
+-- Refactor
+vim.keymap.set(
+    {"n", "x"},
+    "<leader>rr",
+    function() require('refactoring').select_refactor() end
+)
 
 -- Save file
 vim.keymap.set('n', '<leader><leader>', ':w<cr>')
