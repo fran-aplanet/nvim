@@ -1,5 +1,4 @@
 return {
-	"tpope/vim-fugitive",
 	"tpope/vim-surround",
 	"tpope/vim-commentary",
 	{
@@ -14,73 +13,9 @@ return {
 			require("nvim-autopairs").setup({})
 		end,
 	},
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
-	},
+
 	-- Basics
-	"nvim-telescope/telescope-fzy-native.nvim",
-	{
-		"nvim-telescope/telescope.nvim",
-		version = "0.1.0",
-		dependencies = { { "nvim-lua/plenary.nvim" } },
-	},
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"nvim-treesitter/nvim-treesitter-context",
-	"onsails/lspkind.nvim",
 
-	"theprimeagen/harpoon",
-	"folke/tokyonight.nvim",
-	{
-		{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-		{ "williamboman/mason.nvim" },
-		{ "williamboman/mason-lspconfig.nvim" },
-
-		{
-			"neovim/nvim-lspconfig",
-			dependencies = {
-				{ "hrsh7th/cmp-nvim-lsp" },
-			},
-		},
-		{
-			"hrsh7th/nvim-cmp",
-			dependencies = {
-				{ "L3MON4D3/LuaSnip" },
-			},
-		},
-	},
-	"github/copilot.vim",
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		opts = {
-			modes = {
-				search = {
-					enabled = false,
-					highlight = { backdrop = false },
-					jump = { history = true, register = true, nohlsearch = true },
-					search = {},
-				},
-			},
-		},
-  -- stylua: ignore
-  keys = {
-    { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "<leader>F", "<Nop>" },
-  }
-,
-	},
-
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{ "mhartington/formatter.nvim" },
 	{
 		"ThePrimeagen/refactoring.nvim",
 		dependencies = {
@@ -104,11 +39,100 @@ return {
 		opts = {},
 	},
 
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{ "rose-pine/neovim", name = "rose-pine" },
-	"folke/tokyonight.nvim",
+	-- Autocomplete % LSP
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	"nvim-treesitter/nvim-treesitter-context",
+	{
+		{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
+		{ "williamboman/mason.nvim" },
+		{ "williamboman/mason-lspconfig.nvim" },
+
+		{
+			"neovim/nvim-lspconfig",
+			dependencies = {
+				{ "hrsh7th/cmp-nvim-lsp" },
+			},
+		},
+		{
+			"hrsh7th/nvim-cmp",
+			dependencies = {
+				{ "L3MON4D3/LuaSnip", version = "2.*", dependencies = { "rafamadriz/friendly-snippets" } },
+				{ "saadparwaiz1/cmp_luasnip" },
+			},
+		},
+	},
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					keymap = { accept = "<Tab>" },
+				},
+				panel = { enabled = false },
+			})
+		end,
+	},
+	-- Formatting
 	{
 		"stevearc/conform.nvim",
 		opts = {},
 	},
+	-- Navigation
+	"theprimeagen/harpoon",
+	{
+		"nvim-telescope/telescope.nvim",
+		version = "0.1.x",
+		dependencies = { { "nvim-lua/plenary.nvim" } },
+	},
+	"nvim-telescope/telescope-fzy-native.nvim",
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			modes = {
+				search = {
+					enabled = false,
+					highlight = { backdrop = false },
+					jump = { history = true, register = true, nohlsearch = true },
+					search = {},
+				},
+			},
+		},
+		keys = {
+			{
+				"<leader>s",
+				mode = { "n", "x", "o" },
+				function()
+					require("flash").jump()
+				end,
+				desc = "Flash",
+			},
+			{ "<leader>F", "<Nop>" },
+		},
+	},
+	-- Git
+	"tpope/vim-fugitive",
+
+	-- Colors & styles
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
+	},
+	"onsails/lspkind.nvim",
+	"folke/tokyonight.nvim",
+	{ "rose-pine/neovim", name = "rose-pine" },
+	"sainnhe/gruvbox-material",
 }
