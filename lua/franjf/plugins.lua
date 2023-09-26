@@ -135,4 +135,6 @@ return {
 	"folke/tokyonight.nvim",
 	{ "rose-pine/neovim", name = "rose-pine" },
 	"sainnhe/gruvbox-material",
+	"marko-cerovac/material.nvim",
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 }
