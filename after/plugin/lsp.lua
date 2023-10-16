@@ -27,6 +27,6 @@ end)
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "tsserver", "html", "pylsp" },
+	ensure_installed = { "tsserver", "pylsp" },
 	handlers = { lsp_zero.default_setup },
 })
