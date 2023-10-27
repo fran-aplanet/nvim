@@ -82,10 +82,10 @@ return {
 		opts = {},
 	},
 	-- Navigation
-	"theprimeagen/harpoon",
+	-- "theprimeagen/harpoon",
 	{
 		"nvim-telescope/telescope.nvim",
-		version = "0.1.x",
+		version = "0.1.4",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	"nvim-telescope/telescope-fzy-native.nvim",
@@ -125,6 +125,7 @@ return {
 	},
 	-- Git
 	"tpope/vim-fugitive",
+    "lewis6991/gitsigns.nvim",
 
 	-- Colors & styles
 	{
