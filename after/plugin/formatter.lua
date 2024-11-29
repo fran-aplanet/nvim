@@ -1,7 +1,9 @@
-require("conform").setup({
+local conform = require("conform")
+conform.setup({
 	formatters_by_ft = {
-		lua = { "stylua" },
-		python = { "autopep8" },
+		-- python = { "blue" },
+		python = { "ruff_fix", "ruff_format" },
+        json = { "fixjson" },
 	},
 	format_on_save = {
 		timeout_ms = 3000,

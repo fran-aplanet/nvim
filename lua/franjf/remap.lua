@@ -1,4 +1,8 @@
 vim.keymap.set("n", "<leader>e", ":Neotree toggle show reveal<cr>")
+vim.keymap.set("n", "<leader>+", ":vertical resize +5<cr>")
+vim.keymap.set("n", "<leader>-", ":vertical resize -5<cr>")
+vim.keymap.set("n", "<leader>z", ":ZenMode<cr>")
+vim.keymap.set("n", "<C-s>", ":SymbolsOutline<cr>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -62,5 +66,14 @@ vim.keymap.set(
     function() require('refactoring').select_refactor() end
 )
 
+-- Spectre
+vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre"
+})
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word"
+})
+
 -- Save file
 vim.keymap.set('n', '<leader><leader>', ':w<cr>')
+vim.keymap.set('n', '<leader>w', ':noa w<cr>')

@@ -82,7 +82,11 @@ return {
 		opts = {},
 	},
 	-- Navigation
-	-- "theprimeagen/harpoon",
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.1.4",
@@ -142,7 +146,50 @@ return {
 	"onsails/lspkind.nvim",
 	"folke/tokyonight.nvim",
 	{ "rose-pine/neovim", name = "rose-pine" },
-	"sainnhe/gruvbox-material",
+    { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = {}},
 	"marko-cerovac/material.nvim",
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'simrat39/symbols-outline.nvim', config = true, cmd = "SymbolsOutline" },
+    -- Lua
+    {
+      "folke/zen-mode.nvim",
+      opts = {}
+    },
+    "tiagovla/tokyodark.nvim",
+    "github/copilot.vim",
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {
+        -- add any options here
+      },
+      dependencies = {
+        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+        "MunifTanjim/nui.nvim",
+        -- OPTIONAL:
+        --   `nvim-notify` is only needed, if you want to use the notification view.
+        --   If not available, we use `mini` as the fallback
+        "rcarriga/nvim-notify",
+        }
+    },
+    'nvim-lua/plenary.nvim',
+    'nvim-pack/nvim-spectre',
+    {
+        "atiladefreitas/dooing",
+        config = function()
+            require("dooing").setup({
+                keymaps = {
+                    toggle_window = "<leader>,"
+                }
+            })
+        end,
+    },
+    {
+      "folke/ts-comments.nvim",
+      opts = {},
+      event = "VeryLazy",
+      enabled = vim.fn.has("nvim-0.10.0") == 1,
+    },
+
+
 }

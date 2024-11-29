@@ -16,12 +16,12 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>n", function()
 		vim.diagnostic.goto_next()
 	end, opts)
-	vim.keymap.set("i", "<leader>h", function() 
+	vim.keymap.set("n", "<leader>h", function() 
         vim.lsp.buf.signature_help() 
     end, opts)
-	vim.keymap.set("n", "<leader>w", function()
-		vim.lsp.buf.workspace_symbol()
-	end, opts)
+	-- vim.keymap.set("n", "<leader>w", function()
+	-- 	vim.lsp.buf.workspace_symbol()
+	-- end, opts)
 	vim.keymap.set("n", "<leader>r", function()
 		vim.lsp.buf.references()
 	end, opts)
@@ -32,29 +32,23 @@ end)
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "pyright", },
-    handlers = {
-    lsp_zero.default_setup,
-    lua_ls = function()
-      local lua_opts = lsp_zero.nvim_lua_ls()
-      lspconfig.lua_ls.setup(lua_opts)
-    end,
-  }
+	ensure_installed = { "ruff", 'pylsp' },
 })
 
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  settings = {
-    pyright = {
-      autoImportCompletion = true,
-    },
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = 'openFilesOnly',
-        useLibraryCodeForTypes = true,
-        typeCheckingMode = 'off'
-      }
-    }
-  }
-}
+local lspconfig = require("lspconfig")
+lspconfig.ruff.setup{}
+lspconfig.pylsp.setup{}
+
+-- lspconfig.pyright.setup {
+--     on_attach = on_attach,
+--     settings = {
+--         -- pyright = {
+--         --     autoImportCompletion = true,
+--         -- },
+--         python = {
+--             analysis = {
+--                 autoSearchPaths = true,diagnosticMode = 'openFilesOnly',useLibraryCodeForTypes = true,typeCheckingMode = 'off'
+--             }
+--         }
+--     }
+-- }

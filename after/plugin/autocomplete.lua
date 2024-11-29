@@ -21,11 +21,16 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "buffer" },
+        { name = "path" },
 	}),
 	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end,
+		-- function(args)
+          -- return ls.expand_or_jumpable() and ls.expand_or_jump() or '<Tab>'
+        -- end
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end
+		-- end,
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
